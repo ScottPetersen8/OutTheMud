@@ -4,13 +4,13 @@
 
 LOGFILE="ping_results.txt"
 
-while true: do
-echo "$(date) - checking connectivity..." >> $LOGFILE
-    if ping -c 1 8.8.8.8 &> /dev/null
-then
-    echo "$(date) - Internet: UP" >> $LOGFILE
-else
-    echo "$(date) - Internet: DOWN" >> $LOGFILE
-fi
-sleep 60
+while true; do
+    echo "$(date) - checking connectivity..." >> $LOGFILE
+    if ping -n 1 8.8.8.8 &> /dev/null
+    then
+        echo "$(date) - Internet: UP" >> $LOGFILE
+    else
+        echo "$(date) - Internet: DOWN" >> $LOGFILE
+    fi
+    sleep 60
 done
