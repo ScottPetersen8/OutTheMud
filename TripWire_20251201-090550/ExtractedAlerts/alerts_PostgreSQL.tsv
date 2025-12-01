@@ -1,0 +1,25 @@
+timestamp	severity	log_line	source
+2025-11-03 14:54:05 +0200	ALERT	2025-11-03 14:54:05.247 SAST [8240] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-03 14:54:05 +0200	ALERT	2025-11-03 14:54:05.252 SAST [9148] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-03 14:54:05 +0200	ALERT	2025-11-03 14:54:05.252 SAST [9044] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-03 16:28:20 +0200	ALERT	2025-11-03 16:28:20.222 SAST [8356] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-03 16:28:20 +0200	ALERT	2025-11-03 16:28:20.223 SAST [8264] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-03 16:28:20 +0200	ALERT	2025-11-03 16:28:20.223 SAST [9228] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-12 15:51:11 +0200	ALERT	2025-11-12 15:51:11.625 SAST [8448] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-12 15:51:11 +0200	ALERT	2025-11-12 15:51:11.629 SAST [8428] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-12 15:51:11 +0200	ALERT	2025-11-12 15:51:11.629 SAST [9100] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-12 17:13:39 +0200	ALERT	2025-11-12 17:13:39.708 SAST [9356] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-12 17:13:39 +0200	ALERT	2025-11-12 17:13:39.710 SAST [9612] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-12 17:13:39 +0200	ALERT	2025-11-12 17:13:39.710 SAST [9684] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-12 17:15:53 +0200	ALERT	2025-11-12 17:15:53.023 SAST [7836] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-12 17:15:53 +0200	ALERT	2025-11-12 17:15:53.024 SAST [9084] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-12 17:15:53 +0200	ALERT	2025-11-12 17:15:53.024 SAST [8968] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-17 07:49:50 +0200	ALERT	2025-11-17 07:49:50.568 SAST [8708] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-17 07:49:50 +0200	ALERT	2025-11-17 07:49:50.571 SAST [9512] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-17 07:49:50 +0200	ALERT	2025-11-17 07:49:50.571 SAST [9576] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-25 18:19:22 +0200	ALERT	2025-11-25 18:19:22.058 SAST [8824] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-25 18:19:22 +0200	ALERT	2025-11-25 18:19:22.061 SAST [9848] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-25 18:19:22 +0200	ALERT	2025-11-25 18:19:22.061 SAST [9900] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-26 14:08:28 +0200	ALERT	2025-11-26 14:08:28.088 SAST [8848] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-11-26 14:08:28 +0200	ALERT	2025-11-26 14:08:28.093 SAST [9736] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-11-26 14:08:28 +0200	ALERT	2025-11-26 14:08:28.093 SAST [9672] ERROR:  canceling statement due to user request	PostgreSQL.tsv

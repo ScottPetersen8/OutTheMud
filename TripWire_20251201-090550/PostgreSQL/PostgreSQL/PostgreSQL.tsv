@@ -1,0 +1,73 @@
+timestamp	severity	log_line	source
+2025-11-03 14:54:05 +0200	INFO	2025-11-03 14:54:05.247 SAST [8240] LOG:  received fast shutdown request	postgresql-2025-11-01_000000.log
+2025-11-03 14:54:05 +0200	INFO	2025-11-03 14:54:05.252 SAST [8240] LOG:  aborting any active transactions	postgresql-2025-11-01_000000.log
+2025-11-03 14:54:05 +0200	ERROR	2025-11-03 14:54:05.252 SAST [9148] ERROR:  canceling statement due to user request	postgresql-2025-11-01_000000.log
+2025-11-03 14:54:05 +0200	ERROR	2025-11-03 14:54:05.252 SAST [9044] ERROR:  canceling statement due to user request	postgresql-2025-11-01_000000.log
+2025-11-03 14:54:05 +0200	INFO	2025-11-03 14:54:05.260 SAST [8240] LOG:  background worker "logical replication launcher" (PID 9148) exited with exit code 1	postgresql-2025-11-01_000000.log
+2025-11-03 14:54:05 +0200	INFO	2025-11-03 14:54:05.272 SAST [8840] LOG:  shutting down	postgresql-2025-11-01_000000.log
+2025-11-03 14:54:05 +0200	INFO	2025-11-03 14:54:05.301 SAST [8240] LOG:  database system is shut down	postgresql-2025-11-01_000000.log
+2025-11-03 15:04:45 +0200	INFO	2025-11-03 15:04:45.040 SAST [9024] LOG:  database system was shut down at 2025-11-03 14:54:05 SAST	postgresql-2025-11-03_150444.log
+2025-11-03 15:04:45 +0200	INFO	2025-11-03 15:04:45.206 SAST [8356] LOG:  database system is ready to accept connections	postgresql-2025-11-03_150444.log
+2025-11-03 16:28:20 +0200	INFO	2025-11-03 16:28:20.222 SAST [8356] LOG:  received fast shutdown request	postgresql-2025-11-03_150444.log
+2025-11-03 16:28:20 +0200	ERROR	2025-11-03 16:28:20.223 SAST [8264] ERROR:  canceling statement due to user request	postgresql-2025-11-03_150444.log
+2025-11-03 16:28:20 +0200	ERROR	2025-11-03 16:28:20.223 SAST [9228] ERROR:  canceling statement due to user request	postgresql-2025-11-03_150444.log
+2025-11-03 16:28:20 +0200	INFO	2025-11-03 16:28:20.224 SAST [8356] LOG:  aborting any active transactions	postgresql-2025-11-03_150444.log
+2025-11-03 16:28:20 +0200	INFO	2025-11-03 16:28:20.229 SAST [8356] LOG:  background worker "logical replication launcher" (PID 9228) exited with exit code 1	postgresql-2025-11-03_150444.log
+2025-11-03 16:28:20 +0200	INFO	2025-11-03 16:28:20.247 SAST [8788] LOG:  shutting down	postgresql-2025-11-03_150444.log
+2025-11-03 16:28:20 +0200	INFO	2025-11-03 16:28:20.273 SAST [8356] LOG:  database system is shut down	postgresql-2025-11-03_150444.log
+2025-11-03 18:36:43 +0200	INFO	2025-11-03 18:36:43.901 SAST [9024] LOG:  database system was shut down at 2025-11-03 16:28:20 SAST	postgresql-2025-11-03_183643.log
+2025-11-03 18:36:44 +0200	INFO	2025-11-03 18:36:44.106 SAST [8448] LOG:  database system is ready to accept connections	postgresql-2025-11-03_183643.log
+2025-11-12 15:51:11 +0200	INFO	2025-11-12 15:51:11.625 SAST [8448] LOG:  received fast shutdown request	postgresql-2025-11-12_000000.log
+2025-11-12 15:51:11 +0200	ERROR	2025-11-12 15:51:11.629 SAST [8428] ERROR:  canceling statement due to user request	postgresql-2025-11-12_000000.log
+2025-11-12 15:51:11 +0200	ERROR	2025-11-12 15:51:11.629 SAST [9100] ERROR:  canceling statement due to user request	postgresql-2025-11-12_000000.log
+2025-11-12 15:51:11 +0200	INFO	2025-11-12 15:51:11.629 SAST [8448] LOG:  aborting any active transactions	postgresql-2025-11-12_000000.log
+2025-11-12 15:51:11 +0200	INFO	2025-11-12 15:51:11.638 SAST [8448] LOG:  background worker "logical replication launcher" (PID 9100) exited with exit code 1	postgresql-2025-11-12_000000.log
+2025-11-12 15:51:11 +0200	INFO	2025-11-12 15:51:11.659 SAST [9164] LOG:  shutting down	postgresql-2025-11-12_000000.log
+2025-11-12 15:51:11 +0200	INFO	2025-11-12 15:51:11.693 SAST [8448] LOG:  database system is shut down	postgresql-2025-11-12_000000.log
+2025-11-12 17:11:59 +0200	INFO	2025-11-12 17:11:59.957 SAST [9472] LOG:  database system was shut down at 2025-11-12 15:51:11 SAST	postgresql-2025-11-12_171159.log
+2025-11-12 17:12:00 +0200	INFO	2025-11-12 17:12:00.172 SAST [9356] LOG:  database system is ready to accept connections	postgresql-2025-11-12_171159.log
+2025-11-12 17:13:39 +0200	INFO	2025-11-12 17:13:39.708 SAST [9356] LOG:  received fast shutdown request	postgresql-2025-11-12_171159.log
+2025-11-12 17:13:39 +0200	ERROR	2025-11-12 17:13:39.710 SAST [9612] ERROR:  canceling statement due to user request	postgresql-2025-11-12_171159.log
+2025-11-12 17:13:39 +0200	ERROR	2025-11-12 17:13:39.710 SAST [9684] ERROR:  canceling statement due to user request	postgresql-2025-11-12_171159.log
+2025-11-12 17:13:39 +0200	INFO	2025-11-12 17:13:39.712 SAST [9356] LOG:  aborting any active transactions	postgresql-2025-11-12_171159.log
+2025-11-12 17:13:39 +0200	INFO	2025-11-12 17:13:39.719 SAST [9356] LOG:  background worker "logical replication launcher" (PID 9684) exited with exit code 1	postgresql-2025-11-12_171159.log
+2025-11-12 17:13:39 +0200	INFO	2025-11-12 17:13:39.734 SAST [9524] LOG:  shutting down	postgresql-2025-11-12_171159.log
+2025-11-12 17:13:39 +0200	INFO	2025-11-12 17:13:39.775 SAST [9356] LOG:  database system is shut down	postgresql-2025-11-12_171159.log
+2025-11-12 17:14:32 +0200	INFO	2025-11-12 17:14:32.693 SAST [8576] LOG:  database system was shut down at 2025-11-12 17:13:39 SAST	postgresql-2025-11-12_171432.log
+2025-11-12 17:14:32 +0200	INFO	2025-11-12 17:14:32.917 SAST [7836] LOG:  database system is ready to accept connections	postgresql-2025-11-12_171432.log
+2025-11-12 17:15:53 +0200	INFO	2025-11-12 17:15:53.023 SAST [7836] LOG:  received fast shutdown request	postgresql-2025-11-12_171432.log
+2025-11-12 17:15:53 +0200	ERROR	2025-11-12 17:15:53.024 SAST [9084] ERROR:  canceling statement due to user request	postgresql-2025-11-12_171432.log
+2025-11-12 17:15:53 +0200	ERROR	2025-11-12 17:15:53.024 SAST [8968] ERROR:  canceling statement due to user request	postgresql-2025-11-12_171432.log
+2025-11-12 17:15:53 +0200	INFO	2025-11-12 17:15:53.025 SAST [7836] LOG:  aborting any active transactions	postgresql-2025-11-12_171432.log
+2025-11-12 17:15:53 +0200	INFO	2025-11-12 17:15:53.031 SAST [7836] LOG:  background worker "logical replication launcher" (PID 9084) exited with exit code 1	postgresql-2025-11-12_171432.log
+2025-11-12 17:15:53 +0200	INFO	2025-11-12 17:15:53.051 SAST [8804] LOG:  shutting down	postgresql-2025-11-12_171432.log
+2025-11-12 17:15:53 +0200	INFO	2025-11-12 17:15:53.086 SAST [7836] LOG:  database system is shut down	postgresql-2025-11-12_171432.log
+2025-11-12 17:16:44 +0200	INFO	2025-11-12 17:16:44.848 SAST [8580] LOG:  database system was shut down at 2025-11-12 17:15:53 SAST	postgresql-2025-11-12_171644.log
+2025-11-12 17:16:45 +0200	INFO	2025-11-12 17:16:45.053 SAST [8708] LOG:  database system is ready to accept connections	postgresql-2025-11-12_171644.log
+2025-11-17 07:49:50 +0200	INFO	2025-11-17 07:49:50.568 SAST [8708] LOG:  received fast shutdown request	postgresql-2025-11-17_000000.log
+2025-11-17 07:49:50 +0200	ERROR	2025-11-17 07:49:50.571 SAST [9512] ERROR:  canceling statement due to user request	postgresql-2025-11-17_000000.log
+2025-11-17 07:49:50 +0200	ERROR	2025-11-17 07:49:50.571 SAST [9576] ERROR:  canceling statement due to user request	postgresql-2025-11-17_000000.log
+2025-11-17 07:49:50 +0200	INFO	2025-11-17 07:49:50.572 SAST [8708] LOG:  aborting any active transactions	postgresql-2025-11-17_000000.log
+2025-11-17 07:49:50 +0200	INFO	2025-11-17 07:49:50.587 SAST [8708] LOG:  background worker "logical replication launcher" (PID 9576) exited with exit code 1	postgresql-2025-11-17_000000.log
+2025-11-17 07:49:50 +0200	INFO	2025-11-17 07:49:50.590 SAST [9344] LOG:  shutting down	postgresql-2025-11-17_000000.log
+2025-11-17 07:49:50 +0200	INFO	2025-11-17 07:49:50.626 SAST [8708] LOG:  database system is shut down	postgresql-2025-11-17_000000.log
+2025-11-17 07:55:04 +0200	INFO	2025-11-17 07:55:04.488 SAST [9616] LOG:  database system was shut down at 2025-11-17 07:49:50 SAST	postgresql-2025-11-17_075504.log
+2025-11-17 07:55:04 +0200	INFO	2025-11-17 07:55:04.645 SAST [8824] LOG:  database system is ready to accept connections	postgresql-2025-11-17_075504.log
+2025-11-25 18:19:22 +0200	INFO	2025-11-25 18:19:22.058 SAST [8824] LOG:  received fast shutdown request	postgresql-2025-11-25_000000.log
+2025-11-25 18:19:22 +0200	ERROR	2025-11-25 18:19:22.061 SAST [9848] ERROR:  canceling statement due to user request	postgresql-2025-11-25_000000.log
+2025-11-25 18:19:22 +0200	ERROR	2025-11-25 18:19:22.061 SAST [9900] ERROR:  canceling statement due to user request	postgresql-2025-11-25_000000.log
+2025-11-25 18:19:22 +0200	INFO	2025-11-25 18:19:22.062 SAST [8824] LOG:  aborting any active transactions	postgresql-2025-11-25_000000.log
+2025-11-25 18:19:22 +0200	INFO	2025-11-25 18:19:22.070 SAST [8824] LOG:  background worker "logical replication launcher" (PID 9900) exited with exit code 1	postgresql-2025-11-25_000000.log
+2025-11-25 18:19:22 +0200	INFO	2025-11-25 18:19:22.084 SAST [9792] LOG:  shutting down	postgresql-2025-11-25_000000.log
+2025-11-25 18:19:22 +0200	INFO	2025-11-25 18:19:22.122 SAST [8824] LOG:  database system is shut down	postgresql-2025-11-25_000000.log
+2025-11-25 18:20:13 +0200	INFO	2025-11-25 18:20:13.325 SAST [9380] LOG:  database system was shut down at 2025-11-25 18:19:22 SAST	postgresql-2025-11-25_182013.log
+2025-11-25 18:20:13 +0200	INFO	2025-11-25 18:20:13.485 SAST [8848] LOG:  database system is ready to accept connections	postgresql-2025-11-25_182013.log
+2025-11-26 14:08:28 +0200	INFO	2025-11-26 14:08:28.088 SAST [8848] LOG:  received fast shutdown request	postgresql-2025-11-26_000000.log
+2025-11-26 14:08:28 +0200	INFO	2025-11-26 14:08:28.091 SAST [8848] LOG:  aborting any active transactions	postgresql-2025-11-26_000000.log
+2025-11-26 14:08:28 +0200	ERROR	2025-11-26 14:08:28.093 SAST [9736] ERROR:  canceling statement due to user request	postgresql-2025-11-26_000000.log
+2025-11-26 14:08:28 +0200	ERROR	2025-11-26 14:08:28.093 SAST [9672] ERROR:  canceling statement due to user request	postgresql-2025-11-26_000000.log
+2025-11-26 14:08:28 +0200	INFO	2025-11-26 14:08:28.099 SAST [8848] LOG:  background worker "logical replication launcher" (PID 9736) exited with exit code 1	postgresql-2025-11-26_000000.log
+2025-11-26 14:08:28 +0200	INFO	2025-11-26 14:08:28.099 SAST [9496] LOG:  shutting down	postgresql-2025-11-26_000000.log
+2025-11-26 14:08:28 +0200	INFO	2025-11-26 14:08:28.128 SAST [8848] LOG:  database system is shut down	postgresql-2025-11-26_000000.log
+2025-11-26 14:13:41 +0200	INFO	2025-11-26 14:13:41.777 SAST [9796] LOG:  database system was shut down at 2025-11-26 14:08:28 SAST	postgresql-2025-11-26_141341.log
+2025-11-26 14:13:41 +0200	INFO	2025-11-26 14:13:41.970 SAST [8896] LOG:  database system is ready to accept connections	postgresql-2025-11-26_141341.log

@@ -1,0 +1,15 @@
+﻿"TimeCreated"	"Id"	"LevelDisplayName"	"ProviderName"	"Message"
+"2025/12/01 08:51:22"	"1000"	"Error"	"Application Error"	"Faulting application name: svchost.exe_smphost, version: 10.0.26100.5074, time stamp: 0x00e1a740
+Faulting module name: mispace.dll_unloaded, version: 10.0.26100.7019, time stamp: 0x7bbfe797
+Exception code: 0xc0000005
+Fault offset: 0x000000000017cdb7
+Faulting process id: 0x73C0
+Faulting application start time: 0x1DC6226C2B17DF0
+Faulting application path: C:\WINDOWS\System32\svchost.exe
+Faulting module path: mispace.dll
+Report Id: a5677407-6c04-4bf1-9b55-6fb3922d687b
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/11/30 13:45:19"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/11/30 13:45:19"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""BITS"" in DLL ""C:\Windows\System32\bitsperf.dll"" failed with error code The system cannot find the file specified.. Performance data for this service will not be available."
+"2025/11/30 13:33:01"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."

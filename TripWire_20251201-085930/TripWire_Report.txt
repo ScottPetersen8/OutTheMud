@@ -1,0 +1,30 @@
+═══════════════════════════════════════════════════════════════════════════
+TripWire v2.1-Robust - Incident Collection Summary
+═══════════════════════════════════════════════════════════════════════════
+
+Collection Started: 2025-12-01 08:59:30
+Time Window: 2025-11-03 06:59:30 → 2025-12-01 06:59:30
+Duration: 12.02 seconds
+
+─────────────────────────────────────────────────────────────────────────
+Detection Statistics
+─────────────────────────────────────────────────────────────────────────
+Files Processed:           36
+Lines Analyzed:          9561
+Errors Detected:           16
+Warnings Detected:          0
+Alerts Extracted:          24
+Processing Errors:          1
+
+─────────────────────────────────────────────────────────────────────────
+Output Location
+─────────────────────────────────────────────────────────────────────────
+C:/users/scottp/documents/outthemud/tripwire/TripWire_20251201-085930
+
+Key Files:
+  • TripWire_Summary.log    - Detailed collection log
+  • ExtractedAlerts/        - Critical incidents detected
+  • ReadableReports/        - Human-readable format
+  • SystemSnapshot/         - System state at collection time
+
+═══════════════════════════════════════════════════════════════════════════
