@@ -121,3 +121,4 @@ module TripWire
       nil
     end
   end
+end

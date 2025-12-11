@@ -3,6 +3,7 @@
 # Main entry point
 
 require_relative 'lib/tripwire/version'
+require_relative 'lib/tripwire/path_resolver'
 require_relative 'lib/tripwire/config'
 require_relative 'lib/tripwire/logger'
 require_relative 'lib/tripwire/stats'
@@ -54,7 +55,7 @@ module TripWire
       }
       @dirs.values.each { |d| FileUtils.mkdir_p(d) }
       for key, dir in @dirs
-        @logger.info "Directory for #{key}: #{dir}"
+        @logger.debug "Directory for #{key}: #{dir}"
       end
       TripWire::Logger.setup_summary("#{@root}/summary.log")
     end
@@ -80,18 +81,50 @@ module TripWire
 
       BANNER
     end
-
+    
     def collect_data
       st, et = TripWire::TimeParser.parse(@opts)
-      
+
       # Windows events
       if !@opts[:skip_win] && Gem.win_platform?
         TripWire::Collectors::Windows.collect(%w[System Application Security], st, et, @dirs[:win], @opts)
       end
-      
+
       # File logs
-      TripWire::Collectors::Files.collect('Datadog', @opts[:paths][:datadog], st, et, @dirs[:datadog], @opts) if @opts[:paths][:datadog]
-      TripWire::Collectors::Files.collect('PostgreSQL', @opts[:paths][:postgresql], st, et, @dirs[:postgres], @opts) if @opts[:paths][:postgresql]
+      log = TripWire::Logger.instance
+
+      datadog_path = TripWire::PathResolver.resolve(
+        name: 'datadog',
+        configured: @opts.dig(:paths, :datadog),
+        defaults: TripWire::PathResolver.windows? ?
+                    ['C:/ProgramData/Datadog/logs', 'C:/Datadog/logs', 'D:/Datadog/logs'] :
+                    ['/var/log/datadog', '/opt/datadog/logs', '/usr/local/var/datadog/logs'],
+        search_names: ['datadog', 'dd', 'dd-agent', 'datadog-agent', 'datadog-logs'],
+        log: log
+      )
+
+      postgres_path = TripWire::PathResolver.resolve(
+        name: 'postgresql',
+        configured: @opts.dig(:paths, :postgresql),
+        defaults: TripWire::PathResolver.windows? ?
+                    ['C:/Program Files/PostgreSQL', 'C:/PostgreSQL/logs', 'D:/PostgreSQL/logs'] :
+                    ['/var/lib/postgresql', '/var/log/postgresql', '/opt/postgresql', '/usr/local/var/log/postgresql'],
+        search_names: ['postgresql', 'pgsql', 'pg', 'pg_logs', 'log', 'logs'],
+        log: log
+      )
+
+      TripWire::Collectors::Files.collect('Datadog', datadog_path, st, et, @dirs[:datadog], @opts) if datadog_path
+      TripWire::Collectors::Files.collect('PostgreSQL', postgres_path, st, et, @dirs[:postgres], @opts) if postgres_path
+
+      unless datadog_path
+        log.warn "Datadog path not resolved; writing empty TSV"
+        TripWire::TSV.write(File.join(@dirs[:datadog], 'Datadog.tsv'), [%w[timestamp severity message source]])
+      end
+
+      unless postgres_path
+        log.warn "PostgreSQL path not resolved; writing empty TSV"
+        TripWire::TSV.write(File.join(@dirs[:postgres], 'PostgreSQL.tsv'), [%w[timestamp severity message source]])
+      end
     end
 
     def process_data
@@ -121,15 +154,15 @@ module TripWire
       puts "\n#{sum}\n"
     end
   end
-end
 
-# Entry point
-if __FILE__ == $0
-  trap('INT') { puts "\n⚠️  Interrupted"; exit(130) }
-  
-  options = TripWire::CLI.parse(ARGV)
-  TripWire::Logger.instance.level = Logger::DEBUG if options[:verbose]
-  
-  runner = TripWire::Runner.new(options)
-  runner.run
+  # Entry point
+  if __FILE__ == $0
+    trap('INT') { puts "\n⚠️  Interrupted"; exit(130) }
+    
+    options = TripWire::CLI.parse(ARGV)
+    TripWire::Logger.instance.level = Logger::DEBUG if options[:verbose]
+    
+    runner = TripWire::Runner.new(options)
+    runner.run
+  end
 end
