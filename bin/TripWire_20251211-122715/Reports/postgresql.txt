@@ -1,0 +1,27 @@
+================================================================================
+TripWire Report: postgresql.txt
+================================================================================
+
+[2025-12-05 10:00:07] INFO     | postgresql-2025-12-04_110244.log         | 2025-12-04 11:02:44.588 SAST [9164] LOG:  database system was shut down at 2025-12-04 11:01:47 SAST
+[2025-12-05 10:00:07] INFO     | postgresql-2025-12-04_110244.log         | 2025-12-04 11:02:44.772 SAST [8412] LOG:  database system is ready to accept connections
+[2025-12-05 10:00:07] INFO     | postgresql-2025-12-04_110244.log         | 2025-12-05 10:00:07.751 SAST [8412] LOG:  received fast shutdown request
+[2025-12-05 10:00:07] INFO     | postgresql-2025-12-05_000000.log         | 2025-12-05 10:00:07.754 SAST [8412] LOG:  aborting any active transactions
+[2025-12-05 10:00:07] ERROR    | postgresql-2025-12-05_000000.log         | 2025-12-05 10:00:07.755 SAST [9412] ERROR:  canceling statement due to user request
+[2025-12-05 10:00:07] ERROR    | postgresql-2025-12-05_000000.log         | 2025-12-05 10:00:07.755 SAST [9276] ERROR:  canceling statement due to user request
+[2025-12-05 10:00:07] INFO     | postgresql-2025-12-05_000000.log         | 2025-12-05 10:00:07.759 SAST [8412] LOG:  background worker "logical replication launcher" (PID 9412) exited with exit code 1
+[2025-12-05 10:00:07] INFO     | postgresql-2025-12-05_000000.log         | 2025-12-05 10:00:07.760 SAST [5164] LOG:  shutting down
+[2025-12-05 10:00:07] INFO     | postgresql-2025-12-05_000000.log         | 2025-12-05 10:00:07.783 SAST [8412] LOG:  database system is shut down
+[2025-12-05 10:01:13] INFO     | postgresql-2025-12-05_100112.log         | 2025-12-05 10:01:12.876 SAST [9524] LOG:  database system was shut down at 2025-12-05 10:00:07 SAST
+[2025-12-05 10:01:13] INFO     | postgresql-2025-12-05_100112.log         | 2025-12-05 10:01:13.050 SAST [8812] LOG:  database system is ready to accept connections
+[2025-12-08 07:40:43] INFO     | postgresql-2025-12-08_000000.log         | 2025-12-08 07:40:43.713 SAST [8812] LOG:  received fast shutdown request
+[2025-12-08 07:40:43] INFO     | postgresql-2025-12-08_000000.log         | 2025-12-08 07:40:43.716 SAST [8812] LOG:  aborting any active transactions
+[2025-12-08 07:40:43] ERROR    | postgresql-2025-12-08_000000.log         | 2025-12-08 07:40:43.719 SAST [10128] ERROR:  canceling statement due to user request
+[2025-12-08 07:40:43] ERROR    | postgresql-2025-12-08_000000.log         | 2025-12-08 07:40:43.720 SAST [10036] ERROR:  canceling statement due to user request
+[2025-12-08 07:40:43] INFO     | postgresql-2025-12-08_000000.log         | 2025-12-08 07:40:43.728 SAST [8812] LOG:  background worker "logical replication launcher" (PID 10128) exited with exit code 1
+[2025-12-08 07:40:43] INFO     | postgresql-2025-12-08_000000.log         | 2025-12-08 07:40:43.730 SAST [9904] LOG:  shutting down
+[2025-12-08 07:40:43] INFO     | postgresql-2025-12-08_000000.log         | 2025-12-08 07:40:43.762 SAST [8812] LOG:  database system is shut down
+[2025-12-08 07:43:42] INFO     | postgresql-2025-12-08_074342.log         | 2025-12-08 07:43:42.421 SAST [9456] LOG:  database system was shut down at 2025-12-08 07:40:43 SAST
+[2025-12-08 07:43:42] INFO     | postgresql-2025-12-08_074342.log         | 2025-12-08 07:43:42.636 SAST [8840] LOG:  database system is ready to accept connections
+
+================================================================================
+Total: 20 events

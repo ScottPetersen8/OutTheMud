@@ -1,0 +1,7 @@
+timestamp	severity	message	source
+2025-12-05 10:00:07	ALERT	2025-12-05 10:00:07.751 SAST [8412] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-12-05 10:00:07	ALERT	2025-12-05 10:00:07.755 SAST [9412] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-12-05 10:00:07	ALERT	2025-12-05 10:00:07.755 SAST [9276] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-12-08 07:40:43	ALERT	2025-12-08 07:40:43.713 SAST [8812] LOG:  received fast shutdown request	PostgreSQL.tsv
+2025-12-08 07:40:43	ALERT	2025-12-08 07:40:43.719 SAST [10128] ERROR:  canceling statement due to user request	PostgreSQL.tsv
+2025-12-08 07:40:43	ALERT	2025-12-08 07:40:43.720 SAST [10036] ERROR:  canceling statement due to user request	PostgreSQL.tsv
