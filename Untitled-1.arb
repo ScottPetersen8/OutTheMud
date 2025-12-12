@@ -1,0 +1,245 @@
+#!/usr/bin/env ruby
+# TripWire v3.2 - Modular Incident Detection System
+# Main entry point
+
+require_relative 'lib/version'
+require_relative 'lib/path_resolver'
+require_relative 'lib/config'
+require_relative 'lib/logger'
+require_relative 'lib/stats'
+require_relative 'lib/utils'
+require_relative 'lib/tsv'
+require_relative 'lib/powershell'
+require_relative 'lib/time_parser'
+require_relative 'lib/collectors/windows'
+require_relative 'lib/collectors/files'
+require_relative 'lib/processors/alerts'
+require_relative 'lib/processors/reports'
+require_relative 'lib/processors/snapshot'
+require_relative 'lib/cli'
+
+
+  require 'psych'
+
+    module TripWire
+      class Config
+        DEFAULTS = {
+          # Sensible defaults; adjust for your environment
+          'postgres_log_path' => 'C:/Program Files/PostgreSQL/Logs',    # example
+          'datadog_log_path'  => 'C:/ProgramData/Datadog/logs',         # example
+          'scan_drives'       => ['C:'],                                # drives to search
+          'include_patterns'  => ['postgresql-*.log', 'datadog-*.log'], # glob-like hints
+          'exclude_paths'     => [],
+        }.freeze
+
+        def self.load
+          config_dir  = File.expand_path(File.join(__dir__, '..', 'config'))
+          config_file = File.join(config_dir, 'config.yml')
+
+          # Start from defaults
+          config = DEFAULTS.dup
+
+          begin
+            if File.file?(config_file)
+              # Load user config and deep-merge with defaults
+              user_cfg = Psych.load_file(config_file)
+              unless user_cfg.is_a?(Hash)
+                warn "[tripwire] config.yml is not a hash; ignoring and using defaults."
+              else
+                config = deep_merge(DEFAULTS, stringify_keys(user_cfg))
+              end
+            else
+              warn "[tripwire] Missing config.yml at #{config_file}; using defaults."
+            end
+          rescue Psych::Exception => e
+            warn "[tripwire] YAML parse error in config.yml: #{e.message}"
+            warn "[tripwire] Using defaults."
+          rescue Errno::ENOENT
+            # Redundant due to File.file? check, but keeps it explicit
+            warn "[tripwire] config.yml not found at #{config_file}; using defaults."
+          end
+
+          config
+        end
+     
+    # --- helpers ---
+
+    def self.stringify_keys(hash)
+      hash.each_with_object({}) do |(k, v), h|
+        key = k.is_a?(Symbol) ? k.to_s : k
+        h[key] = v.is_a?(Hash) ? stringify_keys(v) : v
+      end
+    end
+
+    def self.deep_merge(base, override)
+      base.merge(override) do |_key, old_val, new_val|
+        if old_val.is_a?(Hash) && new_val.is_a?(Hash)
+          deep_merge(old_val, new_val)
+        else
+          new_val.nil? ? old_val : new_val
+        end
+      end
+    end
+  end
+end
+
+class TripWire::Runner  
+    module TripWire
+      class Runner
+        def initialize(options = {})
+          require 'yaml'
+
+          # Load YAML config
+          config_path = File.expand_path('../../config/config.yml', __dir__)
+          config = YAML.load_file(config_path)
+
+          # Store in @opts for use in PathResolver and elsewhere
+          @opts = {}
+          @opts[:paths] = config['paths'].transform_keys(&:to_sym)
+
+          @logger = TripWire::Logger.instance
+          @stats  = TripWire::Stats.instance
+
+          @logger.info "TripWire v#{TripWire::VERSION} initialized"
+        end
+      end
+    end
+
+    def run
+      setup_directories
+      display_banner
+      collect_data
+      process_data
+      write_summary
+      
+      @logger.info "✅ Complete!"
+    rescue => e
+      @logger.fatal "Fatal: #{e.message}"
+      @logger.debug e.backtrace.join("\n") if @opts[:verbose]
+      exit(2)
+    end
+
+    private
+  end
+  
+    def setup_directories
+      @root = File.join(Dir.pwd, "TripWire_#{Time.now.strftime('%Y%m%d-%H%M%S')}")
+      @dirs = {
+        win: "#{@root}/Windows",
+        datadog: "#{@root}/Datadog", 
+        postgres: "#{@root}/PostgreSQL",
+        alerts: "#{@root}/Alerts",
+        reports: "#{@root}/Reports",
+        snapshot: "#{@root}/Snapshot"
+      }
+      @dirs.values.each { |d| FileUtils.mkdir_p(d) }
+      for key, dir in @dirs
+        @logger.debug "Directory for #{key}: #{dir}"
+      end
+      TripWire::Logger.setup_summary("#{@root}/summary.log")
+    end
+
+    def display_banner
+      st, et = TripWire::TimeParser.parse(@opts)
+      
+      puts <<~BANNER
+
+        ╔══════════════════════════════════════════════════════════════════════╗
+        ║   ████████╗██████╗ ██╗██████╗ ██╗    ██╗██╗██████╗ ███████╗          ║
+        ║   ╚══██╔══╝██╔══██╗██║██╔══██╗██║    ██║██║██╔══██╗██╔════╝          ║
+        ║      ██║   ██████╔╝██║██████╔╝██║ █╗ ██║██║██████╔╝█████╗            ║
+        ║      ██║   ██╔══██╗██║██╔═══╝ ██║███╗██║██║██╔══██╗██╔══╝            ║
+        ║      ██║   ██║  ██║██║██║     ╚███╔╝██╔╝██║██║  ██║███████╗          ║
+        ║      ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═╝╚══════╝          ║
+        ║                                                                      ║
+        ║            Incident Detection System v#{TripWire::VERSION.center(22)}         ║
+        ╚══════════════════════════════════════════════════════════════════════╝
+
+        Time: #{st.strftime('%Y-%m-%d %H:%M')} → #{et.strftime('%Y-%m-%d %H:%M')}
+        Output: #{@root}
+
+      BANNER
+    end
+    
+    def collect_data
+      st, et = TripWire::TimeParser.parse(@opts)
+
+      # Windows events
+      if !@opts[:skip_win] && Gem.win_platform?
+        TripWire::Collectors::Windows.collect(%w[System Application Security], st, et, @dirs[:win], @opts)
+      end
+
+      # File logs
+      log = TripWire::Logger.instance
+
+      datadog_path = TripWire::PathResolver.resolve(
+        name: 'datadog',
+        configured: @opts.dig(:paths, :datadog),
+        defaults: TripWire::PathResolver.windows? ?
+                    ['C:/ProgramData/Datadog/logs', 'C:/Datadog/logs', 'D:/Datadog/logs'] :
+                    ['/var/log/datadog', '/opt/datadog/logs', '/usr/local/var/datadog/logs'],
+        search_names: ['datadog', 'dd', 'dd-agent', 'datadog-agent', 'datadog-logs'],
+        log: log
+      )
+
+      postgres_path = TripWire::PathResolver.resolve(
+        name: 'postgresql',
+        configured: @opts.dig(:paths, :postgresql),
+        defaults: TripWire::PathResolver.windows? ?
+                    ['C:/Program Files/PostgreSQL', 'C:/PostgreSQL/logs', 'D:/PostgreSQL/logs'] :
+                    ['/var/lib/postgresql', '/var/log/postgresql', '/opt/postgresql', '/usr/local/var/log/postgresql'],
+        search_names: ['postgresql', 'pgsql', 'pg', 'pg_logs', 'log', 'logs'],
+        log: log
+      )
+
+      TripWire::Collectors::Files.collect('Datadog', datadog_path, st, et, @dirs[:datadog], @opts) if datadog_path
+      TripWire::Collectors::Files.collect('PostgreSQL', postgres_path, st, et, @dirs[:postgres], @opts) if postgres_path
+
+      unless datadog_path
+        log.warn "Datadog path not resolved; writing empty TSV"
+        TripWire::TSV.write(File.join(@dirs[:datadog], 'Datadog.tsv'), [%w[timestamp severity message source]])
+      end
+
+      unless postgres_path
+        log.warn "PostgreSQL path not resolved; writing empty TSV"
+        TripWire::TSV.write(File.join(@dirs[:postgres], 'PostgreSQL.tsv'), [%w[timestamp severity message source]])
+      end
+    end
+
+    def process_data
+      st, et = TripWire::TimeParser.parse(@opts)
+      
+      TripWire::Processors::Alerts.extract(@root, st, et, @dirs[:alerts])
+      TripWire::Processors::Reports.generate(@root, @dirs[:reports])
+      TripWire::Processors::Snapshot.capture(@dirs[:snapshot]) if !@opts[:skip_snap] && Gem.win_platform?
+    end
+
+    def write_summary
+      elapsed = Time.now - @stats[:start]
+      st, et = TripWire::TimeParser.parse(@opts)
+      
+      sum = <<~SUM
+        ═════════════════════════════════════════════════════════════════
+        TripWire v#{TripWire::VERSION} - Summary
+        ═════════════════════════════════════════════════════════════════
+        Duration: #{sprintf('%.2f', elapsed)}s
+        Range: #{st.strftime('%Y-%m-%d %H:%M')} → #{et.strftime('%Y-%m-%d %H:%M')}
+        Files: #{@stats[:files]} | Lines: #{@stats[:lines]} | Errors: #{@stats[:err]} | Alerts: #{@stats[:alerts]}
+        Output: #{@root}
+        ═════════════════════════════════════════════════════════════════
+      SUM
+      
+      File.write("#{@root}/SUMMARY.txt", sum)
+      puts "\n#{sum}\n"
+    end
+
+  # Entry point
+  if __FILE__ == $0
+    trap('INT') { puts "\n⚠️  Interrupted"; exit(130) }
+    
+    options = TripWire::CLI.parse(ARGV)
+    TripWire::Logger.instance.level = Logger::DEBUG if options[:verbose]
+    
+    runner = TripWire::Runner.new(options)
+    runner.run
+  end

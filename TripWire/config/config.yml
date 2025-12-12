@@ -1,0 +1,84 @@
+# TripWire Configuration File
+# Customize paths and behavior for your environment
+
+# Log file paths - if not specified, TripWire will search common locations
+paths:
+  # Datadog log directory
+  datadog: 'C:/ProgramData/Datadog/logs'
+  
+  # PostgreSQL log directory
+  postgresql: 'C:/Program Files/PostgreSQL/15/data/log'
+
+# Default collection options
+options:
+  # Collect all Windows Security events (not just filtered IDs)
+  all_security_events: false
+  
+  # Collect all Windows event levels (not just Error/Warning/Critical)
+  all_event_levels: false
+  
+  # Include all files regardless of timestamp
+  all_files: false
+  
+  # Skip Windows event collection
+  skip_windows: false
+  
+  # Skip system snapshot
+  skip_snapshot: false
+  
+  # Run Windows event collection in parallel
+  parallel: false
+  
+  # Verbose logging
+  verbose: false
+
+# Windows Security Event IDs to collect (when all_security_events: false)
+# Common security events: logon, logoff, account changes, etc.
+security_event_ids:
+  - 4624  # Successful logon
+  - 4625  # Failed logon
+  - 4634  # Logoff
+  - 4648  # Logon using explicit credentials
+  - 4672  # Special privileges assigned
+  - 4720  # User account created
+  - 4726  # User account deleted
+  - 4740  # User account locked out
+  - 4767  # User account unlocked
+
+# File search configuration
+file_search:
+  # Additional drives to search (beyond C:)
+  drives:
+    - 'C:'
+    # - 'D:'
+    # - 'E:'
+  
+  # Glob patterns for log files
+  include_patterns:
+    - '*.log'
+    - '*.txt'
+    - 'postgresql-*.log'
+    - 'datadog-*.log'
+  
+  # Paths to exclude from search
+  exclude_paths:
+    - 'C:/Windows/WinSxS'
+    - 'C:/Windows/Installer'
+    - 'C:/$Recycle.Bin'
+
+# Alert detection configuration
+alerts:
+  # Keywords that trigger alerts
+  error_keywords:
+    - 'FATAL'
+    - 'CRITICAL'
+    - 'EXCEPTION'
+    - 'FAILED'
+    - 'CONNECTION REFUSED'
+    - 'TIMEOUT'
+    - 'OUT OF MEMORY'
+  
+  warn_keywords:
+    - 'WARNING'
+    - 'DEPRECATED'
+    - 'RETRY'
