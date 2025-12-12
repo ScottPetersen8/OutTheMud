@@ -3,9 +3,12 @@ module TripWire
     module Files
       def self.collect(name, path, st, et, dir, opts)
         tsv = File.join(dir, "#{name}.tsv")
-        TripWire::Logger.instance.info "#{name}..."
-        
+        TripWire::Logger.instance.info "#{name}..." unless opts[:skip_log]
+
+        stop_spinner = TripWire::Utils.spinner(name)
+              
         unless Dir.exist?(path)
+          stop_spinner.call
           TripWire::Logger.instance.warn "  Not found: #{path}"
           TripWire::TSV.write(tsv, [%w[timestamp severity message source]])
           return
@@ -24,6 +27,7 @@ module TripWire
         
         TripWire::TSV.write(tsv, rows)
         TripWire::Stats.instance.increment(:files, files)
+        stop_spinner.call
         TripWire::Logger.instance.info "  ✓ #{files} files, #{rows.size - 1} lines"
       rescue => e
         TripWire::Logger.instance.error "#{name}: #{e.message}"

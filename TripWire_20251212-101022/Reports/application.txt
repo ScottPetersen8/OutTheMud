@@ -1,0 +1,80 @@
+================================================================================
+TripWire Report: application.txt
+================================================================================
+
+[2025-12-11 19:09:51] Error    | Microsoft-Windows-Perflib                | Windows cannot load the extensible counter DLL "C:\WINDOWS\system32\sysmain.dll" (Win32 error code The specified module could not be found.). [1023]
+[2025-12-11 19:09:51] Warning  | Microsoft-Windows-Perflib                | The Open procedure for service "BITS" in DLL "C:\Windows\System32\bitsperf.dll" failed with error code The system cannot find the file specified.. Performance data for this service will not be available. [1008]
+[2025-12-11 15:10:51] Error    | Application Error                        | Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61 Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61 Exception code: 0xc000041d Fault offset: 0x000116f7 Faulting process id: 0x5E4 Faulting application start time: 0x1DC6A9F86E5C015 Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll Report Id: cf8c4af2-61ff-45fe-9884-2f2118200b2d Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 15:10:47] Error    | Application Error                        | Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61 Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61 Exception code: 0xc0000005 Fault offset: 0x000116f7 Faulting process id: 0x5E4 Faulting application start time: 0x1DC6A9F86E5C015 Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll Report Id: db5e3464-fcd4-4839-aa77-d99423ef750c Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 15:10:42] Error    | Application Error                        | Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Exception code: 0x80000003 Fault offset: 0x005c006c Faulting process id: 0x860 Faulting application start time: 0x1DC6A9F86C6538E Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Report Id: 026aa4ce-bdd8-4f26-9ec3-086f76c898f6 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 15:03:41] Error    | Application Error                        | Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Exception code: 0xc0000409 Fault offset: 0x0053093f Faulting process id: 0x3D44 Faulting application start time: 0x1DC6A9E8BB13476 Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Report Id: 140b6312-9590-4040-992f-661ef6adf792 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 14:54:18] Error    | Application Error                        | Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Exception code: 0x80000003 Fault offset: 0x005c006c Faulting process id: 0x242C Faulting application start time: 0x1DC6A9D3C66081B Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Report Id: eda6f00e-3d5b-423d-a485-0b2d9fde021a Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 14:53:01] Error    | Application Error                        | Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Faulting module name: ucrtbase.dll, version: 10.0.26100.7019, time stamp: 0xafb62d66 Exception code: 0xc0000409 Fault offset: 0x0002da51 Faulting process id: 0x513C Faulting application start time: 0x1DC6A9D0E042FEF Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Faulting module path: C:\WINDOWS\System32\ucrtbase.dll Report Id: 52f49240-1b25-4d06-84b0-7ee8bd33f308 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 14:27:23] Error    | Application Error                        | Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Faulting module name: ntdll.dll, version: 10.0.26100.7462, time stamp: 0x20848390 Exception code: 0xc0000374 Fault offset: 0x000fc61f Faulting process id: 0xA5C Faulting application start time: 0x1DC6A9979A22FEE Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll Report Id: 32f02b03-bdfe-474f-8f76-9d35b30f1007 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 14:27:05] Error    | Application Error                        | Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Faulting module name: ntdll.dll, version: 10.0.26100.7462, time stamp: 0x20848390 Exception code: 0xc0000374 Fault offset: 0x000fc61f Faulting process id: 0x5BB8 Faulting application start time: 0x1DC6A996F28AAB1 Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll Report Id: 80324d5e-f912-4811-ae50-93633f3944b9 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 14:25:48] Error    | Application Error                        | Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222 Exception code: 0x80000003 Fault offset: 0x005c006c Faulting process id: 0x1208 Faulting application start time: 0x1DC6A9940D5AC77 Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe Report Id: c9367e4e-6fb0-47bb-84d1-0f066e44c358 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 14:21:59] Error    | Application Error                        | Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61 Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61 Exception code: 0xc000041d Fault offset: 0x000116f7 Faulting process id: 0x390C Faulting application start time: 0x1DC6A98B48664C7 Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll Report Id: 223bc0bb-de46-410c-9139-c10323549122 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-11 14:21:53] Error    | Application Error                        | Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61 Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61 Exception code: 0xc0000005 Fault offset: 0x000116f7 Faulting process id: 0x390C Faulting application start time: 0x1DC6A98B48664C7 Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll Report Id: 470b0dae-c184-4ef8-8e3f-961e09397554 Faulting package full name:  Faulting package-relative application ID: [1000]
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+[2025-12-12 10:10:34] INFO     | Application.tsv                          | <no message>
+
+================================================================================
+Total: 73 events

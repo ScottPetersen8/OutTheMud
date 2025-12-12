@@ -23,21 +23,40 @@ require 'yaml'
 module TripWire
   class Runner
     def initialize(options = {})
-      # Store options
+      # Store CLI options
       @opts = options
       
       # Load YAML config
       config_path = File.expand_path('../config/config.yml', __dir__)
       if File.exist?(config_path)
-        config = YAML.load_file(config_path)
-        # Merge paths from config if available
-        if config && config['paths']
-          @opts[:paths] ||= {}
-          @opts[:paths].merge!(config['paths'].transform_keys(&:to_sym))
+        begin
+          config = YAML.load_file(config_path)
+          
+          # Merge paths from config
+          if config && config['paths']
+            @opts[:paths] ||= {}
+            config['paths'].each { |k, v| @opts[:paths][k.to_sym] = v }
+          end
+          
+          # Merge default options (CLI options override config)
+          if config && config['options']
+            config['options'].each do |key, value|
+              opt_key = key.to_sym
+              @opts[opt_key] = value unless @opts.key?(opt_key)
+            end
+          end
+          
+          # Store other config sections
+          @config = config
+          
+        rescue => e
+          warn "[TripWire] Error loading config.yml: #{e.message}"
+          @config = {}
         end
       else
-        # Initialize empty paths hash if no config
+        warn "[TripWire] No config.yml found at #{config_path}, using defaults"
         @opts[:paths] ||= {}
+        @config = {}
       end
 
       @logger = TripWire::Logger.instance
@@ -105,7 +124,7 @@ module TripWire
       st, et = TripWire::TimeParser.parse(@opts)
 
       # Windows events
-      if !@opts[:skip_win] && Gem.win_platform?
+      if !@opts[:skip_windows] && !@opts[:skip_win] && Gem.win_platform?
         TripWire::Collectors::Windows.collect(%w[System Application Security], st, et, @dirs[:win], @opts)
       end
 
@@ -116,7 +135,6 @@ module TripWire
       configured_datadog = @opts.dig(:paths, :datadog)
       @logger.debug "Configured datadog path: #{configured_datadog.inspect}"
       
-      @logger.info "Resolving Datadog path..."
       datadog_path = TripWire::PathResolver.resolve(
         name: 'datadog',
         configured: configured_datadog.is_a?(String) ? configured_datadog : nil,
@@ -129,7 +147,6 @@ module TripWire
       configured_postgres = @opts.dig(:paths, :postgresql)
       @logger.debug "Configured postgres path: #{configured_postgres.inspect}"
       
-      @logger.info "Resolving PostgreSQL path..."
       postgres_path = TripWire::PathResolver.resolve(
         name: 'postgresql',
         configured: configured_postgres.is_a?(String) ? configured_postgres : nil,
@@ -140,13 +157,21 @@ module TripWire
       )
 
       if datadog_path
-        @logger.info "Collecting Datadog logs..."
+        @logger.info "Datadog..."
+        stop_spinner = TripWire::Utils.spinner("Datadog")
+        @opts[:skip_log] = true
         TripWire::Collectors::Files.collect('Datadog', datadog_path, st, et, @dirs[:datadog], @opts)
+        @opts[:skip_log] = false
+        stop_spinner.call
       end
       
       if postgres_path
-        @logger.info "Collecting PostgreSQL logs..."
+        @logger.info "PostgreSQL..."
+        stop_spinner = TripWire::Utils.spinner("PostgreSQL")
+        @opts[:skip_log] = true
         TripWire::Collectors::Files.collect('PostgreSQL', postgres_path, st, et, @dirs[:postgres], @opts)
+        @opts[:skip_log] = false
+        stop_spinner.call
       end
 
       unless datadog_path
@@ -165,7 +190,7 @@ module TripWire
       
       TripWire::Processors::Alerts.extract(@root, st, et, @dirs[:alerts])
       TripWire::Processors::Reports.generate(@root, @dirs[:reports])
-      TripWire::Processors::Snapshot.capture(@dirs[:snapshot]) if !@opts[:skip_snap] && Gem.win_platform?
+      TripWire::Processors::Snapshot.capture(@dirs[:snapshot]) if !@opts[:skip_snapshot] && !@opts[:skip_snap] && Gem.win_platform?
     end
 
     def write_summary

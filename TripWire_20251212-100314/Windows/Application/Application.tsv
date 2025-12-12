@@ -1,0 +1,233 @@
+﻿"TimeCreated"	"Id"	"LevelDisplayName"	"ProviderName"	"Message"
+"2025/12/11 19:09:51"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/12/11 19:09:51"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""BITS"" in DLL ""C:\Windows\System32\bitsperf.dll"" failed with error code The system cannot find the file specified.. Performance data for this service will not be available."
+"2025/12/11 15:10:51"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61
+Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61
+Exception code: 0xc000041d
+Fault offset: 0x000116f7
+Faulting process id: 0x5E4
+Faulting application start time: 0x1DC6A9F86E5C015
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll
+Report Id: cf8c4af2-61ff-45fe-9884-2f2118200b2d
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 15:10:47"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61
+Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61
+Exception code: 0xc0000005
+Fault offset: 0x000116f7
+Faulting process id: 0x5E4
+Faulting application start time: 0x1DC6A9F86E5C015
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll
+Report Id: db5e3464-fcd4-4839-aa77-d99423ef750c
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 15:10:42"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Exception code: 0x80000003
+Fault offset: 0x005c006c
+Faulting process id: 0x860
+Faulting application start time: 0x1DC6A9F86C6538E
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Report Id: 026aa4ce-bdd8-4f26-9ec3-086f76c898f6
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 15:03:41"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Exception code: 0xc0000409
+Fault offset: 0x0053093f
+Faulting process id: 0x3D44
+Faulting application start time: 0x1DC6A9E8BB13476
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Report Id: 140b6312-9590-4040-992f-661ef6adf792
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:54:18"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Exception code: 0x80000003
+Fault offset: 0x005c006c
+Faulting process id: 0x242C
+Faulting application start time: 0x1DC6A9D3C66081B
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Report Id: eda6f00e-3d5b-423d-a485-0b2d9fde021a
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:53:01"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ucrtbase.dll, version: 10.0.26100.7019, time stamp: 0xafb62d66
+Exception code: 0xc0000409
+Fault offset: 0x0002da51
+Faulting process id: 0x513C
+Faulting application start time: 0x1DC6A9D0E042FEF
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\WINDOWS\System32\ucrtbase.dll
+Report Id: 52f49240-1b25-4d06-84b0-7ee8bd33f308
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:27:23"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ntdll.dll, version: 10.0.26100.7462, time stamp: 0x20848390
+Exception code: 0xc0000374
+Fault offset: 0x000fc61f
+Faulting process id: 0xA5C
+Faulting application start time: 0x1DC6A9979A22FEE
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 32f02b03-bdfe-474f-8f76-9d35b30f1007
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:27:05"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ntdll.dll, version: 10.0.26100.7462, time stamp: 0x20848390
+Exception code: 0xc0000374
+Fault offset: 0x000fc61f
+Faulting process id: 0x5BB8
+Faulting application start time: 0x1DC6A996F28AAB1
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\WINDOWS\SYSTEM32\ntdll.dll
+Report Id: 80324d5e-f912-4811-ae50-93633f3944b9
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:25:48"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Exception code: 0x80000003
+Fault offset: 0x005c006c
+Faulting process id: 0x1208
+Faulting application start time: 0x1DC6A9940D5AC77
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Report Id: c9367e4e-6fb0-47bb-84d1-0f066e44c358
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:21:59"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61
+Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61
+Exception code: 0xc000041d
+Fault offset: 0x000116f7
+Faulting process id: 0x390C
+Faulting application start time: 0x1DC6A98B48664C7
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll
+Report Id: 223bc0bb-de46-410c-9139-c10323549122
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:21:53"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMAgent.exe, version: 10.1.50449.25030, time stamp: 0x67d9cf61
+Faulting module name: qwindows.dll, version: 5.12.12.4, time stamp: 0x6411bd61
+Exception code: 0xc0000005
+Fault offset: 0x000116f7
+Faulting process id: 0x390C
+Faulting application start time: 0x1DC6A98B48664C7
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMAgent.exe
+Faulting module path: C:\Program Files (x86)\COMODO\Endpoint Manager\platforms\qwindows.dll
+Report Id: 470b0dae-c184-4ef8-8e3f-961e09397554
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:19:43"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ucrtbase.dll, version: 10.0.26100.7019, time stamp: 0xafb62d66
+Exception code: 0xc0000409
+Fault offset: 0x0002da51
+Faulting process id: 0x603C
+Faulting application start time: 0x1DC6A986743C8D5
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\WINDOWS\System32\ucrtbase.dll
+Report Id: 0ef352ae-c230-4201-b692-77d645d5ce59
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/11 14:14:03"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""WmiApRpl"" in DLL ""C:\WINDOWS\system32\wbem\wmiaprpl.dll"" failed with error code The device is not ready.. Performance data for this service will not be available."
+"2025/12/11 14:14:03"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""WmiApRpl"" in DLL ""C:\WINDOWS\system32\wbem\wmiaprpl.dll"" failed with error code The device is not ready.. Performance data for this service will not be available."
+"2025/12/11 14:14:03"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""MSDTC"" in DLL ""C:\WINDOWS\system32\msdtcuiu.DLL"" failed with error code Access is denied.. Performance data for this service will not be available."
+"2025/12/11 14:13:58"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/11 14:13:58"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/11 14:13:58"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/11 14:13:54"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service "".NETFramework"" in DLL ""C:\WINDOWS\system32\mscoree.dll"" failed with error code Access is denied.. Performance data for this service will not be available."
+"2025/12/11 14:12:52"	"6004"	"Warning"	"Microsoft-Windows-Winlogon"	"The winlogon notification subscriber <TrustedInstaller> failed a critical notification event."
+"2025/12/11 14:12:24"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""WmiApRpl"" in DLL ""C:\WINDOWS\system32\wbem\wmiaprpl.dll"" failed with error code The device is not ready.. Performance data for this service will not be available."
+"2025/12/11 14:12:24"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""WmiApRpl"" in DLL ""C:\WINDOWS\system32\wbem\wmiaprpl.dll"" failed with error code The device is not ready.. Performance data for this service will not be available."
+"2025/12/11 14:12:24"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""MSDTC"" in DLL ""C:\WINDOWS\system32\msdtcuiu.DLL"" failed with error code Access is denied.. Performance data for this service will not be available."
+"2025/12/11 14:12:20"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/11 14:12:20"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/11 14:12:20"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/11 14:12:15"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service "".NETFramework"" in DLL ""C:\WINDOWS\system32\mscoree.dll"" failed with error code Access is denied.. Performance data for this service will not be available."
+"2025/12/10 17:22:10"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/12/10 17:22:10"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""BITS"" in DLL ""C:\Windows\System32\bitsperf.dll"" failed with error code The system cannot find the file specified.. Performance data for this service will not be available."
+"2025/12/09 12:00:03"	"1000"	"Error"	"Application Error"	"Faulting application name: LockApp.exe, version: 10.0.26100.7309, time stamp: 0x887f409d
+Faulting module name: Windows.UI.Xaml.dll, version: 10.0.26100.7309, time stamp: 0x62287fde
+Exception code: 0xc000027b
+Fault offset: 0x00000000008fadf3
+Faulting process id: 0x28BC
+Faulting application start time: 0x1DC68DDA78A2412
+Faulting application path: C:\WINDOWS\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe
+Faulting module path: C:\Windows\System32\Windows.UI.Xaml.dll
+Report Id: 5765da16-6d98-4490-97bd-e30e9ae292a1
+Faulting package full name: Microsoft.LockApp_10.0.26100.4202_neutral__cw5n1h2txyewy
+Faulting package-relative application ID: WindowsDefaultLockScreen"
+"2025/12/08 16:30:09"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/12/08 16:30:09"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""BITS"" in DLL ""C:\Windows\System32\bitsperf.dll"" failed with error code The system cannot find the file specified.. Performance data for this service will not be available."
+"2025/12/08 16:17:37"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/12/08 12:45:34"	"1000"	"Error"	"Application Error"	"Faulting application name: svchost.exe_smphost, version: 10.0.26100.5074, time stamp: 0x00e1a740
+Faulting module name: mispace.dll_unloaded, version: 10.0.26100.7309, time stamp: 0x8a9c24a3
+Exception code: 0xc0000005
+Fault offset: 0x000000000017c887
+Faulting process id: 0x6E3C
+Faulting application start time: 0x1DC68254E01422C
+Faulting application path: C:\WINDOWS\System32\svchost.exe
+Faulting module path: mispace.dll
+Report Id: f892df40-bf55-4d1b-97d7-1f8c9ea4b7a5
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/08 12:01:26"	"1000"	"Error"	"Application Error"	"Faulting application name: Drobo Dashboard.exe, version: 3.5.0.48244, time stamp: 0x5ddbc68d
+Faulting module name: Drobo Dashboard.exe, version: 3.5.0.48244, time stamp: 0x5ddbc68d
+Exception code: 0xc0000005
+Fault offset: 0x001c17ee
+Faulting process id: 0x71A8
+Faulting application start time: 0x1DC68299D97DA6F
+Faulting application path: C:\Program Files (x86)\Drobo\Drobo Dashboard\Drobo Dashboard.exe
+Faulting module path: C:\Program Files (x86)\Drobo\Drobo Dashboard\Drobo Dashboard.exe
+Report Id: c5a0815f-9f38-40c4-8dc4-740877b1cade
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/08 07:47:41"	"1000"	"Error"	"Application Error"	"Faulting application name: ITSMService.exe, version: 10.1.50449.25030, time stamp: 0x67d9d222
+Faulting module name: ucrtbase.dll, version: 10.0.26100.7019, time stamp: 0xafb62d66
+Exception code: 0xc0000409
+Fault offset: 0x0002da51
+Faulting process id: 0xD80
+Faulting application start time: 0x1DC680622931F23
+Faulting application path: C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+Faulting module path: C:\WINDOWS\System32\ucrtbase.dll
+Report Id: 09ee460c-645d-4ba4-ab64-6542fc5ebac1
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/08 07:43:52"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""WmiApRpl"" in DLL ""C:\WINDOWS\system32\wbem\wmiaprpl.dll"" failed with error code The device is not ready.. Performance data for this service will not be available."
+"2025/12/08 07:43:52"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""WmiApRpl"" in DLL ""C:\WINDOWS\system32\wbem\wmiaprpl.dll"" failed with error code The device is not ready.. Performance data for this service will not be available."
+"2025/12/08 07:43:51"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/08 07:43:51"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/08 07:43:51"	"63"	"Warning"	"Microsoft-Windows-WMI"	"A provider, IntelMEProv, has been registered in the Windows Management Instrumentation namespace root\Intel_ME to use the LocalSystem account. This account is privileged and the provider may cause a security violation if it does not correctly impersonate user requests."
+"2025/12/08 07:43:43"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service "".NETFramework"" in DLL ""C:\WINDOWS\system32\mscoree.dll"" failed with error code Access is denied.. Performance data for this service will not be available."
+"2025/12/08 07:40:53"	"8193"	"Error"	"VSS"	"Volume Shadow Copy Service error: Unexpected error calling routine CoCreateInstance.  hr = 0x8007045b, A system shutdown is in progress.
+. "
+"2025/12/08 07:40:53"	"13"	"Error"	"VSS"	"Volume Shadow Copy Service information: The COM Server with CLSID {4e14fba2-2e22-11d1-9964-00c04fbbb345} and name CEventSystem cannot be started. [0x8007045b, A system shutdown is in progress.
+] "
+"2025/12/08 07:40:40"	"6006"	"Warning"	"Microsoft-Windows-Winlogon"	"The winlogon notification subscriber <GPClient> took 413 second(s) to handle the notification event (Logoff)."
+"2025/12/08 07:34:48"	"6005"	"Warning"	"Microsoft-Windows-Winlogon"	"The winlogon notification subscriber <GPClient> is taking long time to handle the notification event (Logoff)."
+"2025/12/07 16:16:38"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/12/07 16:16:38"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""BITS"" in DLL ""C:\Windows\System32\bitsperf.dll"" failed with error code The system cannot find the file specified.. Performance data for this service will not be available."
+"2025/12/06 16:07:45"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/12/06 16:07:45"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""BITS"" in DLL ""C:\Windows\System32\bitsperf.dll"" failed with error code The system cannot find the file specified.. Performance data for this service will not be available."
+"2025/12/06 08:49:28"	"10010"	"Warning"	"Microsoft-Windows-RestartManager"	"Application 'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE' (pid 6016) cannot be restarted - Application SID does not match Conductor SID.."
+"2025/12/06 08:49:28"	"10010"	"Warning"	"Microsoft-Windows-RestartManager"	"Application 'C:\Program Files\Microsoft Office\root\Office16\ONENOTEM.EXE' (pid 7820) cannot be restarted - Application SID does not match Conductor SID.."
+"2025/12/06 08:14:03"	"10010"	"Warning"	"Microsoft-Windows-RestartManager"	"Application 'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE' (pid 6016) cannot be restarted - Application SID does not match Conductor SID.."
+"2025/12/06 08:14:03"	"10010"	"Warning"	"Microsoft-Windows-RestartManager"	"Application 'C:\Program Files\Microsoft Office\root\Office16\ONENOTEM.EXE' (pid 7820) cannot be restarted - Application SID does not match Conductor SID.."
+"2025/12/05 15:03:25"	"1000"	"Error"	"Application Error"	"Faulting application name: svchost.exe_smphost, version: 10.0.26100.5074, time stamp: 0x00e1a740
+Faulting module name: mispace.dll_unloaded, version: 10.0.26100.7309, time stamp: 0x8a9c24a3
+Exception code: 0xc0000005
+Fault offset: 0x000000000017c887
+Faulting process id: 0x762C
+Faulting application start time: 0x1DC65E1414AFA4F
+Faulting application path: C:\WINDOWS\System32\svchost.exe
+Faulting module path: mispace.dll
+Report Id: 71975774-f94c-4398-a692-69408bc26686
+Faulting package full name: 
+Faulting package-relative application ID: "
+"2025/12/05 14:46:29"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
+"2025/12/05 14:46:29"	"1008"	"Warning"	"Microsoft-Windows-Perflib"	"The Open procedure for service ""BITS"" in DLL ""C:\Windows\System32\bitsperf.dll"" failed with error code The system cannot find the file specified.. Performance data for this service will not be available."
+"2025/12/05 14:28:08"	"1023"	"Error"	"Microsoft-Windows-Perflib"	"Windows cannot load the extensible counter DLL ""C:\WINDOWS\system32\sysmain.dll"" (Win32 error code The specified module could not be found.)."
