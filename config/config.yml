@@ -1,0 +1,17 @@
+paths:
+  postgresql:
+    # If set to null or invalid, TripWire will fall back to defaults + search
+    configured: "C:/logs/postgresql"
+
+  datadog:
+    configured: "C:/ProgramData/Datadog/logs"
+
+output:
+  parsed: "C:/Users/scottp/Documents/OutTheMud/TripWire/parsed"
+  reports: "C:/Users/scottp/Documents/OutTheMud/TripWire/reports"
+  alerts: "C:/Users/scottp/Documents/OutTheMud/TripWire/alerts"
+
+settings:
+  log_level: "info"
+  file_pattern: "*.tsv"
+  strict_csv: false

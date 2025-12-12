@@ -1,0 +1,130 @@
+================================================================================
+TripWire Report: security.txt
+================================================================================
+
+[2025-12-12 09:47:14] Information | Microsoft-Windows-Security-Auditing      | An account failed to log on. Subject: Security ID: S-1-0-0 Account Name: - Account Domain: - Logon ID: 0x0 Logon Type: 3 Account For Which Logon Failed: Security ID: S-1-0-0 Account Name: imqsadministrator1 Account Domain: IMQS Failure Information: Failure Reason: Unknown user name or bad password. Status: 0xC000006D Sub Status: 0xC0000064 Process Information: Caller Process ID: 0x0 Caller Process Name: - Network Information: Workstation Name: VITALSTATISTIX Source Network Address: 192.168.4.143 Source Port: 19284 Detailed Authentication Information: Logon Process: NtLmSsp  Authentication Package: NTLM Transited Services: - Package Name (NTLM only): - Key Length: 0 This event is generated when a logon request fails. It is generated on the computer where access was attempted. The Subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe. The Logon Type field indicates the kind of logon that was requested. The most common types are 2 (interactive) and 3 (network). The Process Information fields indicate which account and process on the system requested the logon. The Network Information fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases. The authentication information fields provide detailed information about this specific logon request. - Transited services indicate which intermediate services have participated in this logon request. - Package name indicates which sub-protocol was used among the NTLM protocols. - Key length indicates the length of the generated session key. This will be 0 if no session key was requested. [4625]
+[2025-12-12 09:45:41] Information | Microsoft-Windows-Security-Auditing      | Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: SYSTEM Account Domain: NT AUTHORITY Logon ID: 0x3E7 Privileges: SeAssignPrimaryTokenPrivilege SeTcbPrivilege SeSecurityPrivilege SeTakeOwnershipPrivilege SeLoadDriverPrivilege SeBackupPrivilege SeRestorePrivilege SeDebugPrivilege SeAuditPrivilege SeSystemEnvironmentPrivilege SeImpersonatePrivilege SeDelegateSessionUserImpersonatePrivilege [4672]
+[2025-12-12 09:42:58] Information | Microsoft-Windows-Security-Auditing      | An account failed to log on. Subject: Security ID: S-1-0-0 Account Name: - Account Domain: - Logon ID: 0x0 Logon Type: 3 Account For Which Logon Failed: Security ID: S-1-0-0 Account Name: imqsadministrator1 Account Domain: IMQS Failure Information: Failure Reason: Unknown user name or bad password. Status: 0xC000006D Sub Status: 0xC0000064 Process Information: Caller Process ID: 0x0 Caller Process Name: - Network Information: Workstation Name: VITALSTATISTIX Source Network Address: 192.168.4.143 Source Port: 18685 Detailed Authentication Information: Logon Process: NtLmSsp  Authentication Package: NTLM Transited Services: - Package Name (NTLM only): - Key Length: 0 This event is generated when a logon request fails. It is generated on the computer where access was attempted. The Subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe. The Logon Type field indicates the kind of logon that was requested. The most common types are 2 (interactive) and 3 (network). The Process Information fields indicate which account and process on the system requested the logon. The Network Information fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases. The authentication information fields provide detailed information about this specific logon request. - Transited services indicate which intermediate services have participated in this logon request. - Package name indicates which sub-protocol was used among the NTLM protocols. - Key length indicates the length of the generated session key. This will be 0 if no session key was requested. [4625]
+[2025-12-12 09:42:54] Information | Microsoft-Windows-Security-Auditing      | Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: SYSTEM Account Domain: NT AUTHORITY Logon ID: 0x3E7 Privileges: SeAssignPrimaryTokenPrivilege SeTcbPrivilege SeSecurityPrivilege SeTakeOwnershipPrivilege SeLoadDriverPrivilege SeBackupPrivilege SeRestorePrivilege SeDebugPrivilege SeAuditPrivilege SeSystemEnvironmentPrivilege SeImpersonatePrivilege SeDelegateSessionUserImpersonatePrivilege [4672]
+[2025-12-12 09:42:08] Information | Microsoft-Windows-Security-Auditing      | Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: SYSTEM Account Domain: NT AUTHORITY Logon ID: 0x3E7 Privileges: SeAssignPrimaryTokenPrivilege SeTcbPrivilege SeSecurityPrivilege SeTakeOwnershipPrivilege SeLoadDriverPrivilege SeBackupPrivilege SeRestorePrivilege SeDebugPrivilege SeAuditPrivilege SeSystemEnvironmentPrivilege SeImpersonatePrivilege SeDelegateSessionUserImpersonatePrivilege [4672]
+[2025-12-12 09:33:08] Information | Microsoft-Windows-Security-Auditing      | Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: SYSTEM Account Domain: NT AUTHORITY Logon ID: 0x3E7 Privileges: SeAssignPrimaryTokenPrivilege SeTcbPrivilege SeSecurityPrivilege SeTakeOwnershipPrivilege SeLoadDriverPrivilege SeBackupPrivilege SeRestorePrivilege SeDebugPrivilege SeAuditPrivilege SeSystemEnvironmentPrivilege SeImpersonatePrivilege SeDelegateSessionUserImpersonatePrivilege [4672]
+[2025-12-12 09:33:00] Information | Microsoft-Windows-Security-Auditing      | Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: SYSTEM Account Domain: NT AUTHORITY Logon ID: 0x3E7 Privileges: SeAssignPrimaryTokenPrivilege SeTcbPrivilege SeSecurityPrivilege SeTakeOwnershipPrivilege SeLoadDriverPrivilege SeBackupPrivilege SeRestorePrivilege SeDebugPrivilege SeAuditPrivilege SeSystemEnvironmentPrivilege SeImpersonatePrivilege SeDelegateSessionUserImpersonatePrivilege [4672]
+[2025-12-12 09:33:00] Information | Microsoft-Windows-Security-Auditing      | Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: SYSTEM Account Domain: NT AUTHORITY Logon ID: 0x3E7 Privileges: SeAssignPrimaryTokenPrivilege SeTcbPrivilege SeSecurityPrivilege SeTakeOwnershipPrivilege SeLoadDriverPrivilege SeBackupPrivilege SeRestorePrivilege SeDebugPrivilege SeAuditPrivilege SeSystemEnvironmentPrivilege SeImpersonatePrivilege SeDelegateSessionUserImpersonatePrivilege [4672]
+[2025-12-12 09:33:00] Information | Microsoft-Windows-Security-Auditing      | Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: SYSTEM Account Domain: NT AUTHORITY Logon ID: 0x3E7 Privileges: SeAssignPrimaryTokenPrivilege SeTcbPrivilege SeSecurityPrivilege SeTakeOwnershipPrivilege SeLoadDriverPrivilege SeBackupPrivilege SeRestorePrivilege SeDebugPrivilege SeAuditPrivilege SeSystemEnvironmentPrivilege SeImpersonatePrivilege SeDelegateSessionUserImpersonatePrivilege [4672]
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+[2025-12-12 09:49:29] INFO     | Security.tsv                             | <no message>
+
+================================================================================
+Total: 123 events
