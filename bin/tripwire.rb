@@ -2,21 +2,21 @@
 # TripWire v3.2 - Modular Incident Detection System
 # Main entry point
 
-require_relative 'lib/version'
-require_relative 'lib/path_resolver'
-require_relative 'lib/config'
-require_relative 'lib/logger'
-require_relative 'lib/stats'
-require_relative 'lib/utils'
-require_relative 'lib/tsv'
-require_relative 'lib/powershell'
-require_relative 'lib/time_parser'
-require_relative 'lib/collectors/windows'
-require_relative 'lib/collectors/files'
-require_relative 'lib/processors/alerts'
-require_relative 'lib/processors/reports'
-require_relative 'lib/processors/snapshot'
-require_relative 'lib/cli'
+require_relative '../lib/version'
+require_relative '../lib/path_resolver'
+require_relative '../lib/config'
+require_relative '../lib/logger'
+require_relative '../lib/stats'
+require_relative '../lib/utils'
+require_relative '../lib/tsv'
+require_relative '../lib/powershell'
+require_relative '../lib/time_parser'
+require_relative '../lib/collectors/windows'
+require_relative '../lib/collectors/files'
+require_relative '../lib/processors/alerts'
+require_relative '../lib/processors/reports'
+require_relative '../lib/processors/snapshot'
+require_relative '../lib/cli'
 
 require 'yaml'
 
@@ -27,7 +27,7 @@ module TripWire
       @opts = options
       
       # Load YAML config
-      config_path = File.expand_path('../config/config.yml', __dir__)
+      config_path = File.expand_path('../../config/config.yml', __dir__)
       if File.exist?(config_path)
         begin
           config = YAML.load_file(config_path)
