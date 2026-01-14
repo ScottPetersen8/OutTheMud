@@ -27,7 +27,8 @@ module TripWire
       @opts = options
       
       # Load YAML config
-      config_path = File.expand_path('../../config/config.yml', __dir__)
+      script_dir = File.dirname(File.expand_path(__FILE__))
+      config_path = File.join(script_dir, '..', 'config', 'config.yml')
       if File.exist?(config_path)
         begin
           config = YAML.load_file(config_path)

@@ -12,11 +12,11 @@ paths:
 # Default collection options
 options:
   # Collect all Windows Security events (not just filtered IDs)
-  all_security_events: false
+  all_sec: true
   
   # Collect all Windows event levels (not just Error/Warning/Critical)
-  all_event_levels: false
-  
+  all_lvl: true
+
   # Include all files regardless of timestamp
   all_files: false
   
@@ -27,7 +27,7 @@ options:
   skip_snapshot: false
   
   # Run Windows event collection in parallel
-  parallel: false
+  parallel: true
   
   # Verbose logging
   verbose: false

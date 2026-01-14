@@ -8,17 +8,22 @@ module TripWire
       case opts[:mode]
       when :today
         mid = Time.new(now.year, now.month, now.day, 0, 0, 0)
-        [mid, mid + 86399]
+        st, et = mid, mid + 86399
       when :yesterday
         mid = Time.new(now.year, now.month, now.day, 0, 0, 0)
-        [mid - 86400, mid - 1]
+        st, et = mid - 86400, mid - 1
       when :last
-        parse_last(opts[:dur], now)
+        st, et = parse_last(opts[:dur], now)
       when :back
-        parse_back(opts[:dur], now)
+        st, et = parse_back(opts[:dur], now)
       else
-        [now - 86400, now]
+        st, et = now - 86400, now
       end
+      
+      # DEBUG LINE
+      puts "DEBUG: Time range: #{st} to #{et} (#{((et - st) / 3600).round(2)} hours)"
+      
+      [st, et]
     end
     
     private
