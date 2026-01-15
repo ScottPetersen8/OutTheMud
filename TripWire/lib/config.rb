@@ -1,6 +1,6 @@
 module TripWire
   module Config
-    PS_TIMEOUT = 60
+    PS_TIMEOUT = 3000
     
     KEYWORDS = %w[shutdown crash panic fail error critical fatal exception].freeze
     

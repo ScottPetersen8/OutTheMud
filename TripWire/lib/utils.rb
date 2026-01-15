@@ -28,8 +28,31 @@ module TripWire
       return -> {} if TripWire::Logger.instance.level == ::Logger::DEBUG
       
       frames, idx, running = %w[⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏], 0, true
-      t = Thread.new { while running; print "\r#{frames[idx]} #{msg}..."; idx = (idx + 1) % frames.size; sleep 0.1; end }
-      -> { running = false; t.join; print "\r#{' ' * (msg.size + 20)}\r" }
+      mutex = Mutex.new
+      
+      t = Thread.new do
+        while mutex.synchronize { running }
+          begin
+            print "\r#{frames[idx]} #{msg}..."
+            idx = (idx + 1) % frames.size
+            sleep 0.1
+          rescue IOError, Errno::EBADF
+            # Stream closed, exit gracefully
+            break
+          end
+        end
+      end
+      
+      -> do
+        mutex.synchronize { running = false }
+        t.join(1) # Wait max 1 second
+        t.kill if t.alive? # Force kill if still running
+        begin
+          print "\r#{' ' * (msg.size + 20)}\r"
+        rescue IOError, Errno::EBADF
+          # Ignore if output stream is closed
+        end
+      end
     end
   end
 end

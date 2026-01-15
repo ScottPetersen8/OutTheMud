@@ -36,6 +36,47 @@ module TripWire
 
       private
 
+            def self.generate_timeline(root, dir)
+        log = TripWire::Logger.instance
+        log.info "Generating unified timeline..."
+        
+        timeline = []
+        
+        # Collect all events from all TSVs
+        Dir.glob(File.join(root, '**', '*.tsv')).each do |tsv|
+          next if tsv.include?('/Reports/') || tsv.include?('/Alerts/')
+          
+          TripWire::TSV.each(tsv) do |row|
+            ts = extract_timestamp(row)
+            next unless ts
+            
+            timeline << {
+              time: ts,
+              source: File.basename(File.dirname(tsv)),
+              severity: extract_level(row),
+              message: (row['message'] || row['Message'] || '')[0...200]
+            }
+          end
+        end
+        
+        # Sort chronologically
+        timeline.sort_by! { |e| e[:time] }
+        
+        # Write unified timeline
+        File.open(File.join(dir, 'TIMELINE.txt'), 'w') do |f|
+          f.puts "=" * 100
+          f.puts "UNIFIED INCIDENT TIMELINE"
+          f.puts "=" * 100
+          f.puts
+          
+          timeline.each do |evt|
+            f.puts "[#{evt[:time].strftime('%H:%M:%S')}] #{evt[:severity].ljust(8)} #{evt[:source].ljust(15)} | #{evt[:message]}"
+          end
+        end
+        
+        log.info "  ✓ Timeline: #{timeline.size} events"
+      end
+
       def self.create_report(tsv, root, dir)
         parts     = tsv.sub(root, '').split(/[\/\\]/).reject(&:empty?)
         base      = parts.last.sub('.tsv', '')

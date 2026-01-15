@@ -23,23 +23,17 @@ module TripWire
         max_events = opts.key?(:max_events) ? opts[:max_events].to_i : nil
         ps_script = build_script(safe_log, st, et, tsv, filters, max_events)
 
-        # DEBUG: Log the script being run
-        TripWire::Logger.instance.debug "PowerShell script for #{safe_log}:"
-        TripWire::Logger.instance.debug ps_script
-
-        stop = TripWire::Utils.spinner(safe_log)
+        # Disable spinner to avoid stream conflicts
+        # stop = TripWire::Utils.spinner(safe_log)
         begin
-          result = TripWire::PowerShell.run(ps_script)
-          TripWire::Logger.instance.debug "PowerShell result: #{result}"
-        ensure
-          begin
-            stop.call
-          rescue => spinner_err
-            TripWire::Logger.instance.error "Spinner stop failed for #{safe_log}: #{spinner_err.message}"
-          end
+          TripWire::PowerShell.run(ps_script)
+        rescue => e
+          TripWire::Logger.instance.error "PowerShell execution failed for #{safe_log}: #{e.message}"
         end
 
+        # Ensure file has a TSV header if PowerShell didn't create it
         TripWire::TSV.write(tsv, [%w[TimeCreated Id LevelDisplayName ProviderName Message]]) unless File.exist?(tsv)
+
         count_and_log(tsv, safe_log, st, et)
       rescue => e
         TripWire::Logger.instance.error "#{log}: #{e.message}"
@@ -62,28 +56,20 @@ module TripWire
       end
 
       # Build the PowerShell script. Only include -MaxEvents if a value was provided.
-            def self.build_script(log, st, et, tsv, filters, max_events)
-            max_flag = max_events ? "-MaxEvents #{max_events}" : ""
-            <<~PS
-              $ErrorActionPreference = 'Stop'
-              $start = [datetime]'#{st.utc.strftime('%Y-%m-%dT%H:%M:%SZ')}'
-              $end = [datetime]'#{et.utc.strftime('%Y-%m-%dT%H:%M:%SZ')}'
-              try {
-                $e = Get-WinEvent -FilterHashtable @{#{filters.join('; ')}} #{max_flag} -EA Stop |
-                  Select TimeCreated,Id,LevelDisplayName,ProviderName,Message
-                if ($e) { 
-                  $e | ConvertTo-Csv -Delimiter "`t" -NoType | Out-File '#{tsv}' -Encoding utf8 -Force 
-                } else { 
-                  "TimeCreated`tId`tLevelDisplayName`tProviderName`tMessage" | Out-File '#{tsv}' -Encoding utf8 -Force 
-                }
-              } catch {
-                # Write error to file for debugging
-                "Error: $($_.Exception.Message)" | Out-File '#{tsv}.error' -Encoding utf8 -Force
-                "TimeCreated`tId`tLevelDisplayName`tProviderName`tMessage" | Out-File '#{tsv}' -Encoding utf8 -Force
-                exit 1
-              }
-            PS
-          end
+      # FIXED: Use local time instead of UTC - Windows Event Logs use local time
+      def self.build_script(log, st, et, tsv, filters, max_events)
+        max_flag = max_events ? "-MaxEvents #{max_events}" : ""
+        <<~PS
+          $start = [datetime]'#{st.strftime('%Y-%m-%dT%H:%M:%S')}'
+          $end = [datetime]'#{et.strftime('%Y-%m-%dT%H:%M:%S')}'
+          try {
+            $e = Get-WinEvent -FilterHashtable @{#{filters.join('; ')}} #{max_flag} -EA Stop |
+              Select TimeCreated,Id,LevelDisplayName,ProviderName,Message
+            if ($e) { $e | ConvertTo-Csv -Delimiter "`t" -NoType | Out-File '#{tsv}' -Encoding utf8 -Force }
+            else { "TimeCreated`tId`tLevelDisplayName`tProviderName`tMessage" | Out-File '#{tsv}' -Encoding utf8 -Force }
+          } catch { "TimeCreated`tId`tLevelDisplayName`tProviderName`tMessage" | Out-File '#{tsv}' -Encoding utf8 -Force }
+        PS
+      end
 
       def self.count_and_log(tsv, log, requested_start, requested_end)
         cnt = 0
@@ -121,7 +107,7 @@ module TripWire
             gap_days = ((oldest_event - requested_start) / 86400.0).round(1)
             actual_days = ((requested_end - oldest_event) / 86400.0).round(1)
             requested_days = ((requested_end - requested_start) / 86400.0).round(1)
-            TripWire::Logger.instance.warn "  ⚠ #{log}: Only #{actual_days} days available (requested #{requested_days} days) - #{gap_days} day gap"
+            TripWire::Logger.instance.warn "  ⚠  #{log}: Only #{actual_days} days available (requested #{requested_days} days) - #{gap_days} day gap"
             TripWire::Logger.summary.warn "#{log}: Data gap - requested from #{requested_start.strftime('%Y-%m-%d')}, oldest available #{oldest_event.strftime('%Y-%m-%d')}"
           end
         end

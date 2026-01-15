@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# TripWire v3.2 - Modular Incident Detection System
+# TripWire v3.2 - Incident Detection System
 # Main entry point
 
 require_relative '../lib/version'
@@ -128,7 +128,7 @@ module TripWire
       if !@opts[:skip_windows] && !@opts[:skip_win] && Gem.win_platform?
         TripWire::Collectors::Windows.collect(%w[System Application Security], st, et, @dirs[:win], @opts)
       end
-
+      
       # File logs
       @logger.debug "Starting file log collection..."
       @logger.debug "Options paths: #{@opts[:paths].inspect}"

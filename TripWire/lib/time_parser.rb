@@ -20,9 +20,6 @@ module TripWire
         st, et = now - 86400, now
       end
       
-      # DEBUG LINE
-      puts "DEBUG: Time range: #{st} to #{et} (#{((et - st) / 3600).round(2)} hours)"
-      
       [st, et]
     end
     
