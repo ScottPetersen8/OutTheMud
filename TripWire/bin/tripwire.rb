@@ -17,6 +17,9 @@ require_relative '../lib/processors/alerts'
 require_relative '../lib/processors/reports'
 require_relative '../lib/processors/snapshot'
 require_relative '../lib/cli'
+require_relative '../lib/processors/timeline'      # ADD THIS
+require_relative '../lib/processors/comparison'    # ADD THIS
+require_relative '../lib/processors/patterns'
 
 require 'yaml'
 
@@ -128,7 +131,7 @@ module TripWire
       if !@opts[:skip_windows] && !@opts[:skip_win] && Gem.win_platform?
         TripWire::Collectors::Windows.collect(%w[System Application Security], st, et, @dirs[:win], @opts)
       end
-      
+
       # File logs
       @logger.debug "Starting file log collection..."
       @logger.debug "Options paths: #{@opts[:paths].inspect}"
@@ -186,13 +189,15 @@ module TripWire
       end
     end
 
-    def process_data
-      st, et = TripWire::TimeParser.parse(@opts)
-      
-      TripWire::Processors::Alerts.extract(@root, st, et, @dirs[:alerts])
-      TripWire::Processors::Reports.generate(@root, @dirs[:reports])
-      TripWire::Processors::Snapshot.capture(@dirs[:snapshot]) if !@opts[:skip_snapshot] && !@opts[:skip_snap] && Gem.win_platform?
-    end
+      def process_data
+        st, et = TripWire::TimeParser.parse(@opts)
+        
+        TripWire::Processors::Alerts.extract(@root, st, et, @dirs[:alerts])
+        TripWire::Processors::Reports.generate(@root, @dirs[:reports])
+        TripWire::Processors::Timeline.generate(@root, @dirs[:reports], st, et)
+        TripWire::Processors::Patterns.detect(@root, @dirs[:reports])
+        TripWire::Processors::Snapshot.capture(@dirs[:snapshot]) if !@opts[:skip_snapshot] && !@opts[:skip_snap] && Gem.win_platform?
+      end
 
     def write_summary
       elapsed = Time.now - @stats[:start]
