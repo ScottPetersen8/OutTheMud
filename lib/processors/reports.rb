@@ -2,7 +2,38 @@
 
 module TripWire
   module Processors
+    # Report Generator - Create Analysis-Ready Reports
+    #
+    # This module takes raw TSV files and cleans/formats them for analysis.
+    # It handles encoding issues, malformed data, and produces clean reports.
+    #
+    # WHY REPORTS?
+    # - Raw log data is messy (encoding issues, malformed lines, etc)
+    # - Need to standardize for analysis
+    # - Want to track what was skipped and why
+    #
+    # WHAT IT DOES
+    # 1. Reads raw TSV files (might have encoding/format issues)
+    # 2. Cleans each line (fixes encoding, removes control characters)
+    # 3. Outputs clean TSV suitable for Excel/analysis
+    # 4. Tracks statistics (rows processed, rows skipped, reasons)
+    #
+    # KEY CONCEPTS
+    # - Bad encoding: Some logs have non-UTF8 characters
+    #   Solution: Encode with replacement characters
+    # - Malformed CSV: Some lines don't have correct number of columns
+    #   Solution: Use relaxed TSV parsing (see read_relaxed_tsv)
+    # - Control characters: Logs might contain tabs, newlines in message fields
+    #   Solution: Replace with spaces to keep TSV clean
+    #
     module Reports
+      # Generate cleaned reports from all TSV files
+      #
+      # This is the main entry point that:
+      # 1. Finds all TSV files
+      # 2. Creates cleaned versions
+      # 3. Produces summary statistics
+      #
       def self.generate(root, dir)
         log = TripWire::Logger.instance
         log.info "Generating reports..."
@@ -91,8 +122,7 @@ module TripWire
                       col_sep: "\t",
                       headers: true,
                       encoding: 'bom|utf-8',
-                      quote_char: '"',
-                      liberal_parsing: true) do |row|
+                      quote_char: '"') do |row|
             processed += 1
             cnt, skip = emit_row(file, row.to_hash, tsv, cnt, skip)
           end
@@ -176,7 +206,7 @@ module TripWire
           second = first && s.index("\t", first + 1)
           last   = s.rindex("\t")
           return s.split("\t", expected) unless first && second && last && last != second
-          [s[0...first], s[first + 1...second], s[second + 1...last], s[last + 1..]]
+          [s[0...first], s[first + 1...second], s[second + 1...last], s[last + 1..-1]]
         else
           s.split("\t", expected)
         end

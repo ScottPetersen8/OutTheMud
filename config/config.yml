@@ -1,84 +1,128 @@
-# TripWire Configuration File
-# Customize paths and behavior for your environment
+# ============================================================================
+#                        TRIPWIRE CONFIGURATION FILE
+# ============================================================================
+# 
+# This configuration file customizes TripWire's behavior for your environment.
+# Uncomment and modify settings as needed for your specific use case.
+#
+# For more information and examples, see the README.md file.
+#
 
-# Log file paths - if not specified, TripWire will search common locations
+# ============================================================================
+# DATA SOURCE PATHS
+# ============================================================================
+# Specify custom paths for log sources. If not configured, TripWire will
+# automatically search common installation directories.
+#
 paths:
-  # Datadog log directory
+  # Datadog Agent log directory
+  # Default: Searched in C:/ProgramData/Datadog/logs and other common locations
   datadog: 'C:/ProgramData/Datadog/logs'
   
   # PostgreSQL log directory
+  # Default: Searched in Program Files and common installation paths
   postgresql: 'C:/Program Files/PostgreSQL/15/data/log'
 
-# Default collection options
+
+
+# ============================================================================
+# AUTOMATIC DRIVE DETECTION
+# ============================================================================
+# TripWire automatically detects and searches all available drives on your
+# system (C:, D:, E:, etc.). No configuration needed.
+#
+# Detected paths include:
+#   - All available drive letters (C: through Z:)
+#   - System environment paths (ProgramData, AppData, LocalAppData)
+#   - Unix-like paths on non-Windows systems
+
+
+# ============================================================================
+# COLLECTION OPTIONS
+# ============================================================================
+# Configure collection behavior for incident response.
+#
 options:
-  # Collect all Windows Security events (not just filtered IDs)
-  all_security_events: false
+  # Collect ALL Windows Security events
+  # Default (false): Collects only critical security events
+  # Use true during incident response for complete audit trail
+  all_sec: false
   
-  # Collect all Windows event levels (not just Error/Warning/Critical)
-  all_event_levels: false
+  # Collect ALL Windows event levels (System/Application logs)
+  # Default (false): Collects Error, Warning, Information only
+  # Use true for forensic-level detail
+  all_lvl: false
   
-  # Include all files regardless of timestamp
+  # Collect ALL log files regardless of timestamp
+  # Default (false): Only files modified in the time range
+  # Use true to ensure nothing is missed
   all_files: false
   
-  # Skip Windows event collection
+  # Skip Windows Event Log collection entirely
   skip_windows: false
   
-  # Skip system snapshot
-  skip_snapshot: false
-  
-  # Run Windows event collection in parallel
-  parallel: false
-  
-  # Verbose logging
+  # Enable verbose debug logging
   verbose: false
 
-# Windows Security Event IDs to collect (when all_security_events: false)
-# Common security events: logon, logoff, account changes, etc.
-security_event_ids:
-  - 4624  # Successful logon
-  - 4625  # Failed logon
-  - 4634  # Logoff
-  - 4648  # Logon using explicit credentials
-  - 4672  # Special privileges assigned
-  - 4720  # User account created
-  - 4726  # User account deleted
-  - 4740  # User account locked out
-  - 4767  # User account unlocked
 
-# File search configuration
+# ============================================================================
+# TIP: FOR COMPLETE INCIDENT RESPONSE
+# ============================================================================
+# For thorough incident investigation, use command-line flags:
+#   ruby bin/tripwire.rb --last 1d --all-sec --all-lvl --all-files --verbose
+#
+# This collects:
+# - ALL Security events (not filtered by ID)
+# - ALL event levels (Error through Debug)
+# - ALL log files (no time filtering)
+# - Detailed debug output
+
+
+# ============================================================================
+# FILE SEARCH CONFIGURATION
+# ============================================================================
+# Define file patterns for log file collection.
+#
 file_search:
-  # Additional drives to search (beyond C:)
-  drives:
-    - 'C:'
-    # - 'D:'
-    # - 'E:'
-  
-  # Glob patterns for log files
+  # File name patterns to search for
   include_patterns:
     - '*.log'
     - '*.txt'
+    - '*.log*'
+    - '*-*.log'
     - 'postgresql-*.log'
     - 'datadog-*.log'
   
-  # Paths to exclude from search
+  # Exclude paths (directories to skip)
+  # Improves performance by skipping known large/system directories
   exclude_paths:
-    - 'C:/Windows/WinSxS'
-    - 'C:/Windows/Installer'
-    - 'C:/$Recycle.Bin'
+    - 'C:/Windows/WinSxS'      # Windows Side-by-Side (very large)
+    - 'C:/Windows/Installer'   # MSI installer cache
+    - 'C:/$Recycle.Bin'        # Recycle bin
 
-# Alert detection configuration
+
+# ============================================================================
+# ALERT DETECTION
+# ============================================================================
+# Configure keywords that trigger alerts when found in log files.
+# Alerts are written to a separate report for easy review.
+#
 alerts:
-  # Keywords that trigger alerts
-  error_keywords:
+  # Critical Alert Keywords
+  # Logs containing these terms are extracted as potential incident causes
+  keywords:
     - 'FATAL'
     - 'CRITICAL'
     - 'EXCEPTION'
+    - 'ERROR'
     - 'FAILED'
+    - 'FAILURE'
+    - 'CRASH'
+    - 'PANIC'
     - 'CONNECTION REFUSED'
+    - 'CONNECTION RESET'
+    - 'CONNECTION TIMEOUT'
     - 'TIMEOUT'
     - 'OUT OF MEMORY'
-  
-  warn_keywords:
-    - 'WARNING'
-    - 'DEPRECATED'
-    - 'RETRY'
+    - 'DISK FULL'
+    - 'PERMISSION DENIED'

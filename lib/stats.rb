@@ -17,6 +17,10 @@ module TripWire
       @data[key]
     end
     
+    def []=(key, value)
+      @data[key] = value
+    end
+    
     def to_h
       @data
     end
