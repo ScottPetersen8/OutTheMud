@@ -71,8 +71,6 @@ module TripWire
       
       @dirs = {
         win: "#{@root}/Windows",
-        sniffer: "#{@root}/Sniffer",
-        vacuum: "#{@root}/Vacuum",
         files: "#{@root}/ConfiguredLogs",
         analysis: "#{@root}/Analysis",
         alerts: "#{@root}/Alerts",
@@ -92,12 +90,11 @@ module TripWire
       modes << 'Windows Events' unless @opts[:skip_windows]
       modes << ' Sniffer' if @opts[:sniffer]
       modes << ' Vacuum' if @opts[:vacuum]
+      modes << 'Application Logs (Datadog, PostgreSQL)'
       modes << 'Configured Paths' if @opts[:collect_files] && has_configured_paths?
       modes << ' Analysis' if @opts[:analyze]
       
-      mode_str = modes.empty? ? 'Windows Only' : modes.join(' + ')
-      
-      banner = <<-BANNER
+      mode_str =
 
 ╔══════════════════════════════════════════════════════════════════════╗
 ║   ████████╗██████╗ ██╗██████╗ ██╗    ██╗██╗██████╗ ███████╗          ║
@@ -138,21 +135,10 @@ Output: #{@root}
         @logger.info "⏭  Skipping Windows Events (--skip-windows)"
       end
 
-      if @opts[:sniffer]
-        @logger.info " Collecting Sniffer Logs (content-based)..."
-        FileUtils.mkdir_p(@dirs[:sniffer])
-        
-        TripWire::Collectors::Sniffer.collect(st, et, @root, @opts)
-        collectors_run += 1
-      end
-
-      if @opts[:vacuum]
-        @logger.info " Collecting Vacuum Logs (path-based)..."
-        FileUtils.mkdir_p(@dirs[:vacuum])
-        
-        TripWire::Collectors::Vacuum.collect(st, et, @root, @opts)
-        collectors_run += 1
-      end
+      # Always collect Datadog and PostgreSQL
+      @logger.info " Collecting Application Logs..."
+      collect_application_logs(st, et)
+      collectors_run += 1
 
       if @opts[:collect_files] != false && has_configured_paths?
         @logger.info " Collecting from configured paths..."
@@ -173,6 +159,79 @@ Output: #{@root}
       @config && @config['log_sources'] && !@config['log_sources'].empty?
     end
 
+    def collect_application_logs(st, et)
+      # Datadog
+      collect_single_app('Datadog', 
+        ['C:/ProgramData/Datadog', 'C:/Program Files/Datadog', '/var/log/datadog', '/opt/datadog'],
+        st, et)
+      
+      # PostgreSQL
+      collect_single_app('PostgreSQL',
+        ['C:/Program Files/PostgreSQL', 'C:/ProgramData/PostgreSQL', '/var/log/postgresql', '/var/lib/postgresql'],
+        st, et)
+    end
+    
+    def collect_single_app(app_name, paths, st, et)
+      app_dir = File.join(@root, app_name)
+      FileUtils.mkdir_p(app_dir)
+      
+      @logger.info "#{app_name}..."
+      stop_spinner = TripWire::Utils.spinner(app_name)
+      
+      # Find all log files
+      log_files = []
+      paths.each do |path|
+        next unless Dir.exist?(path)
+        Dir.glob(File.join(path, '**', '*.log')).each do |file|
+          log_files << file if File.file?(file)
+        end
+      end
+      
+      if log_files.empty?
+        stop_spinner.call
+        @logger.info "  ✗ Not found"
+        # Create empty TSV
+        TripWire::TSV.write(File.join(app_dir, "#{app_name}.tsv"), [%w[timestamp severity message source file_path]])
+        return
+      end
+      
+      # Consolidate all into one TSV
+      rows = [%w[timestamp severity message source file_path]]
+      log_files.each do |file_path|
+        begin
+          mt = File.mtime(file_path)
+          File.open(file_path, 'r:bom|utf-8') do |f|
+            f.each_line do |line|
+              next if line.strip.empty?
+              
+              ts = TripWire::Utils.parse_timestamp(line) || mt
+              next unless ts.between?(st, et)
+              
+              sev = TripWire::Utils.detect_severity(line)
+              rows << [
+                ts.strftime('%Y-%m-%d %H:%M:%S'),
+                sev || 'INFO',
+                TripWire::Utils.clean(line),
+                File.basename(file_path),
+                file_path
+              ]
+            end
+          end
+        rescue
+          # Skip file on error
+        end
+      end
+      
+      TripWire::TSV.write(File.join(app_dir, "#{app_name}.tsv"), rows)
+      total_lines = rows.size - 1
+      
+      stop_spinner.call
+      @logger.info "  ✓ #{log_files.size} files, #{total_lines} lines"
+      
+      TripWire::Stats.instance.increment(:files, log_files.size)
+      TripWire::Stats.instance.increment(:lines, total_lines)
+    end
+    
     def collect_configured_paths(st, et)
       log_sources = @config['log_sources'] || {}
       
