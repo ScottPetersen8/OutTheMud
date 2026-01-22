@@ -1,0 +1,130 @@
+﻿"TimeCreated"	"Id"	"LevelDisplayName"	"ProviderName"	"Message"
+"2026/01/22 21:19:27"	"1014"	"Warning"	"Microsoft-Windows-DNS-Client"	"Name resolution for the name _ldap._tcp.Stellenbosch._sites.dc._msdcs.home timed out after none of the configured DNS servers responded. Client PID 1376."
+"2026/01/22 21:19:20"	"8020"	"Warning"	"Microsoft-Windows-DNS-Client"	"The system failed to register host (A or AAAA) resource records (RRs) for network adapter
+with settings:
+
+           Adapter Name : {AF6B9F8D-6E08-4D5E-90AF-D1C6C2922059}
+           Host Name : Scott5411
+           Primary Domain Suffix : imqs.local
+           DNS server list :
+             	192.168.4.47
+           Sent update to server : <?>
+           IP Address(es) :
+             192.168.254.75
+
+The reason the system could not register these RRs during the update request was because of a system problem. You can manually retry DNS registration of the network adapter and its settings by typing 'ipconfig /registerdns' at the command prompt. If problems still persist, contact your DNS server or network systems administrator. See event details for specific error code information."
+"2026/01/22 21:19:10"	"1014"	"Warning"	"Microsoft-Windows-DNS-Client"	"Name resolution for the name cis.td.security.comodo.com timed out after none of the configured DNS servers responded. Client PID 4888."
+"2026/01/22 20:53:46"	"5719"	"Error"	"NETLOGON"	"This computer was not able to set up a secure session with a domain controller in domain IMQS due to the following: 
+An internal error occurred. 
+This may lead to authentication problems. Make sure that this computer is connected to the network. If the problem persists, please contact your domain administrator.  
+
+ADDITIONAL INFO 
+If this computer is a domain controller for the specified domain, it sets up the secure session to the primary domain controller emulator in the specified domain. Otherwise, this computer sets up the secure session to any domain controller in the specified domain."
+"2026/01/22 20:53:14"	"1014"	"Warning"	"Microsoft-Windows-DNS-Client"	"Name resolution for the name _ldap._tcp.Stellenbosch._sites.dc._msdcs.home timed out after none of the configured DNS servers responded. Client PID 1376."
+"2026/01/22 20:21:33"	"1129"	"Error"	"Microsoft-Windows-GroupPolicy"	"The processing of Group Policy failed because of lack of network connectivity to a domain controller. This may be a transient condition. A success message would be generated once the machine gets connected to the domain controller and Group Policy has successfully processed. If you do not see a success message for several hours, then contact your administrator."
+"2026/01/22 20:13:04"	"1129"	"Error"	"Microsoft-Windows-GroupPolicy"	"The processing of Group Policy failed because of lack of network connectivity to a domain controller. This may be a transient condition. A success message would be generated once the machine gets connected to the domain controller and Group Policy has successfully processed. If you do not see a success message for several hours, then contact your administrator."
+"2026/01/22 20:13:04"	"1129"	"Error"	"Microsoft-Windows-GroupPolicy"	"The processing of Group Policy failed because of lack of network connectivity to a domain controller. This may be a transient condition. A success message would be generated once the machine gets connected to the domain controller and Group Policy has successfully processed. If you do not see a success message for several hours, then contact your administrator."
+"2026/01/22 20:13:04"	"5719"	"Error"	"NETLOGON"	"This computer was not able to set up a secure session with a domain controller in domain IMQS due to the following: 
+We can't sign you in with this credential because your domain isn't available. Make sure your device is connected to your organization's network and try again. If you previously signed in on this device with another credential, you can sign in with that credential. 
+This may lead to authentication problems. Make sure that this computer is connected to the network. If the problem persists, please contact your domain administrator.  
+
+ADDITIONAL INFO 
+If this computer is a domain controller for the specified domain, it sets up the secure session to the primary domain controller emulator in the specified domain. Otherwise, this computer sets up the secure session to any domain controller in the specified domain."
+"2026/01/22 20:08:04"	"129"	"Warning"	"Microsoft-Windows-Time-Service"	"NtpClient was unable to set a domain peer to use as a time source because of discovery error. NtpClient will try again in 15 minutes and double the reattempt interval thereafter. The error was: The entry is not found. (0x800706E1)"
+"2026/01/22 20:07:19"	"129"	"Warning"	"Microsoft-Windows-Time-Service"	"NtpClient was unable to set a domain peer to use as a time source because of discovery error. NtpClient will try again in 15 minutes and double the reattempt interval thereafter. The error was: The entry is not found. (0x800706E1)"
+"2026/01/22 20:07:19"	"129"	"Warning"	"Microsoft-Windows-Time-Service"	"NtpClient was unable to set a domain peer to use as a time source because of discovery error. NtpClient will try again in 15 minutes and double the reattempt interval thereafter. The error was: The entry is not found. (0x800706E1)"
+"2026/01/22 20:07:19"	"129"	"Warning"	"Microsoft-Windows-Time-Service"	"NtpClient was unable to set a domain peer to use as a time source because of discovery error. NtpClient will try again in 15 minutes and double the reattempt interval thereafter. The error was: The entry is not found. (0x800706E1)"
+"2026/01/22 20:07:13"	"6062"	"Warning"	"Netwtw10"	"6062 - Lso was triggered"
+"2026/01/22 20:07:06"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 20:07:06"	"22"	"Warning"	"Microsoft-Windows-Hyper-V-VmSwitch"	"Media disconnected on NIC /DEVICE/{0CC0E3FE-5ECE-403A-A0E1-5A1457606367} (Friendly Name: Intel(R) Ethernet Connection (11) I219-LM)."
+"2026/01/22 20:07:06"	"10317"	"Error"	"Microsoft-Windows-NDIS"	"Miniport Microsoft Wi-Fi Direct Virtual Adapter #4, {6d961592-57f3-462e-8b31-347828315022}, had event Fatal error: The miniport has failed a power transition to operational power"
+"2026/01/22 20:07:05"	"701"	"Warning"	"Win32k"	"Power Manager has not requested suppression of all input (INPUT_SUPPRESS_REQUEST=0)"
+"2026/01/22 20:07:05"	"701"	"Warning"	"Win32k"	"Power Manager has not requested suppression of all input (INPUT_SUPPRESS_REQUEST=0)"
+"2026/01/22 18:30:29"	"22"	"Warning"	"Microsoft-Windows-Hyper-V-VmSwitch"	"Media disconnected on NIC /DEVICE/{0CC0E3FE-5ECE-403A-A0E1-5A1457606367} (Friendly Name: Intel(R) Ethernet Connection (11) I219-LM)."
+"2026/01/22 18:30:23"	"1129"	"Error"	"Microsoft-Windows-GroupPolicy"	"The processing of Group Policy failed because of lack of network connectivity to a domain controller. This may be a transient condition. A success message would be generated once the machine gets connected to the domain controller and Group Policy has successfully processed. If you do not see a success message for several hours, then contact your administrator."
+"2026/01/22 18:30:22"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 17:55:26"	"1014"	"Warning"	"Microsoft-Windows-DNS-Client"	"Name resolution for the name ctldl.windowsupdate.com timed out after none of the configured DNS servers responded. Client PID 6192."
+"2026/01/22 17:55:09"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 17:54:08"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 17:42:08"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 17:30:22"	"700"	"Warning"	"Win32k"	"Power Manager has requested suppression of all input (INPUT_SUPPRESS_REQUEST=1)"
+"2026/01/22 17:30:22"	"700"	"Warning"	"Win32k"	"Power Manager has requested suppression of all input (INPUT_SUPPRESS_REQUEST=1)"
+"2026/01/22 17:27:58"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 17:14:08"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 12:20:03"	"7034"	"Error"	"Service Control Manager"	"The Microsoft Storage Spaces SMP service terminated unexpectedly.  It has done this 4 time(s)."
+"2026/01/22 12:12:29"	"10016"	"Warning"	"Microsoft-Windows-DistributedCOM"	"The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+ and APPID 
+{15C20B67-12E7-4BB6-92BB-7AFF07997402}
+ to the user IMQS\ScottP SID (S-1-5-21-3765721009-194660189-3906104624-18310) from address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). This security permission can be modified using the Component Services administrative tool."
+"2026/01/22 10:17:17"	"24"	"Warning"	"Microsoft-Windows-Time-Service"	"Time Provider NtpClient: No valid response has been received from domain controller GAIUS.imqs.local after 8 attempts to contact it. This domain controller will be discarded as a time source and NtpClient will attempt to discover a new domain controller from which to synchronize. The error was: The peer is unreachable. "
+"2026/01/22 09:29:28"	"10005"	"Error"	"Microsoft-Windows-DistributedCOM"	"DCOM got error ""2"" attempting to start the service LMS with arguments ""Unavailable"" in order to run the server:
+{7CABC14E-7C51-4AAA-AE3F-CFEB42D5016A}"
+"2026/01/22 09:29:28"	"7000"	"Error"	"Service Control Manager"	"The Intel(R) Management and Security Application Local Management Service service failed to start due to the following error: 
+The system cannot find the file specified."
+"2026/01/22 09:27:32"	"10016"	"Warning"	"Microsoft-Windows-DistributedCOM"	"The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+ and APPID 
+{15C20B67-12E7-4BB6-92BB-7AFF07997402}
+ to the user IMQS\ScottP SID (S-1-5-21-3765721009-194660189-3906104624-18310) from address LocalHost (Using LRPC) running in the application container MicrosoftWindows.Client.WebExperience_525.31002.150.0_x64__cw5n1h2txyewy SID (Unavailable). This security permission can be modified using the Component Services administrative tool."
+"2026/01/22 09:27:17"	"10016"	"Warning"	"Microsoft-Windows-DistributedCOM"	"The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+ and APPID 
+{15C20B67-12E7-4BB6-92BB-7AFF07997402}
+ to the user IMQS\ScottP SID (S-1-5-21-3765721009-194660189-3906104624-18310) from address LocalHost (Using LRPC) running in the application container MSTeams_26005.204.4249.1621_x64__8wekyb3d8bbwe SID (Unavailable). This security permission can be modified using the Component Services administrative tool."
+"2026/01/22 09:26:58"	"1130"	"Error"	"Microsoft-Windows-GroupPolicy"	"Logon script failed. 
+	GPO Name : COMODO
+	GPO File System Path : \\imqs.local\SysVol\imqs.local\Policies\{42582AFD-7A5C-472E-931C-4AFD3D87B553}\User
+	Script Name: C:\Users\Public\Downloads\COMODO Web DLP Subsystem.ps1.ps1"
+"2026/01/22 09:26:58"	"1130"	"Error"	"Microsoft-Windows-GroupPolicy"	"Logon script failed. 
+	GPO Name : COMODO
+	GPO File System Path : \\imqs.local\SysVol\imqs.local\Policies\{42582AFD-7A5C-472E-931C-4AFD3D87B553}\User
+	Script Name: C:\Users\Public\Downloads\COMODO Virtual Service Manager.ps1.ps1"
+"2026/01/22 09:26:45"	"10016"	"Warning"	"Microsoft-Windows-DistributedCOM"	"The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+ and APPID 
+{15C20B67-12E7-4BB6-92BB-7AFF07997402}
+ to the user IMQS\ScottP SID (S-1-5-21-3765721009-194660189-3906104624-18310) from address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). This security permission can be modified using the Component Services administrative tool."
+"2026/01/22 09:26:44"	"10016"	"Warning"	"Microsoft-Windows-DistributedCOM"	"The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+ and APPID 
+{15C20B67-12E7-4BB6-92BB-7AFF07997402}
+ to the user IMQS\ScottP SID (S-1-5-21-3765721009-194660189-3906104624-18310) from address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). This security permission can be modified using the Component Services administrative tool."
+"2026/01/22 09:26:23"	"10016"	"Warning"	"Microsoft-Windows-DistributedCOM"	"The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{6B3B8D23-FA8D-40B9-8DBD-B950333E2C52}
+ and APPID 
+{4839DDB7-58C2-48F5-8283-E1D1807D0D7D}
+ to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). This security permission can be modified using the Component Services administrative tool."
+"2026/01/22 09:26:23"	"10016"	"Warning"	"Microsoft-Windows-DistributedCOM"	"The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{6B3B8D23-FA8D-40B9-8DBD-B950333E2C52}
+ and APPID 
+{4839DDB7-58C2-48F5-8283-E1D1807D0D7D}
+ to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). This security permission can be modified using the Component Services administrative tool."
+"2026/01/22 09:26:23"	"7023"	"Error"	"Service Control Manager"	"The MessagingService_23460b26 service terminated with the following error: 
+The device is not ready."
+"2026/01/22 09:26:18"	"6062"	"Warning"	"Netwtw10"	"6062 - Lso was triggered"
+"2026/01/22 09:26:14"	"10317"	"Error"	"Microsoft-Windows-NDIS"	"Miniport Microsoft Wi-Fi Direct Virtual Adapter #4, {6d961592-57f3-462e-8b31-347828315022}, had event Fatal error: The miniport has failed a power transition to operational power"
+"2026/01/22 09:26:14"	"27"	"Warning"	"e1dexpress"	"Intel(R) Ethernet Connection (11) I219-LM
+ Network link is disconnected.
+"
+"2026/01/22 09:26:14"	"22"	"Warning"	"Microsoft-Windows-Hyper-V-VmSwitch"	"Media disconnected on NIC /DEVICE/{0CC0E3FE-5ECE-403A-A0E1-5A1457606367} (Friendly Name: Intel(R) Ethernet Connection (11) I219-LM)."
+"2026/01/22 09:26:14"	"30"	"Warning"	"TPM"	"Reset and/or resume count do not match expected values after hibernate/resume."
+"2026/01/21 22:15:39"	"22"	"Warning"	"Microsoft-Windows-Hyper-V-VmSwitch"	"Media disconnected on NIC /DEVICE/{0CC0E3FE-5ECE-403A-A0E1-5A1457606367} (Friendly Name: Intel(R) Ethernet Connection (11) I219-LM)."
+"2026/01/21 22:15:32"	"10010"	"Error"	"Microsoft-Windows-DistributedCOM"	"The server {815211C2-E515-4437-A8CC-E93857DF54F5} did not register with DCOM within the required timeout."
+"2026/01/21 22:15:32"	"100"	"Warning"	"winsrvext"	"Process C:\Program Files (x86)\Drobo\Drobo Dashboard\DDAssist.exe is delaying system shutdown after 5063 milliseconds."
+"2026/01/21 22:03:40"	"1014"	"Warning"	"Microsoft-Windows-DNS-Client"	"Name resolution for the name kv601.prod.do.dsp.mp.microsoft.com timed out after none of the configured DNS servers responded. Client PID 2824."
+"2026/01/21 22:03:33"	"1014"	"Warning"	"Microsoft-Windows-DNS-Client"	"Name resolution for the name wpad timed out after none of the configured DNS servers responded. Client PID 3088."

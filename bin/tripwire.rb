@@ -88,13 +88,13 @@ module TripWire
       # Build mode description
       modes = []
       modes << 'Windows Events' unless @opts[:skip_windows]
-      modes << ' Sniffer' if @opts[:sniffer]
-      modes << ' Vacuum' if @opts[:vacuum]
       modes << 'Application Logs (Datadog, PostgreSQL)'
       modes << 'Configured Paths' if @opts[:collect_files] && has_configured_paths?
       modes << ' Analysis' if @opts[:analyze]
       
-      mode_str =
+      mode_str = modes.join(' + ')
+      
+      banner = <<-BANNER
 
 ╔══════════════════════════════════════════════════════════════════════╗
 ║   ████████╗██████╗ ██╗██████╗ ██╗    ██╗██╗██████╗ ███████╗          ║

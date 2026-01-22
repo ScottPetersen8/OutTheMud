@@ -1,0 +1,21 @@
+═══════════════════════════════════════════════════════════════════
+TripWire v4 - Summary
+═══════════════════════════════════════════════════════════════════
+Duration: 4.44s
+Range: 2026-01-21 21:48 → 2026-01-22 21:48
+
+Windows Events: 183 events
+Configured Paths: 157 files
+Alerts: 65 critical issues
+
+Output: C:/Users/scottp/Downloads/TripWire/TripWire_20260122-214804
+
+Key Files:
+  - debug.log (detailed execution log)
+
+
+
+  - Alerts/ (critical issues)
+
+
+═══════════════════════════════════════════════════════════════════
